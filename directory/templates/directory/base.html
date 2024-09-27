@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}The Pretoria Local{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'directory/css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{% static 'directory/assets/logo.png' %}" alt="Logo" class="logo-image" />
+            </div>
+            <ul>
+                <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">HOME</a></li>
+                <li><a href="{% url 'directory' %}" class="{% if request.path == '/directory/' %}active{% endif %}">OUR DIRECTORY</a></li>
+                <li><a href="{% url 'become_member' %}" class="{% if request.path == '/membership/' or request.path == '/membership' %}active{% endif %}">GET ON BOARD</a></li>
+                <li><a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">BLOG</a></li>
+                <li><a href="{% url 'contact_us' %}" class="{% if request.path == '/contact/' or request.path == '/contact' %}active{% endif %}">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 The Pretoria Local. All rights reserved.</p>
+</footer>
+
+<script src="{% static 'directory/js/scripts.js' %}"></script>
+</body>
+</html>

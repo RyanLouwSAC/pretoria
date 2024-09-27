@@ -1,0 +1,12 @@
+{% extends 'directory/base.html' %}
+
+{% block title %}Blog | The Pretoria Local{% endblock %}
+
+{% block content %}
+<h1>Blog Posts</h1>
+<ul>
+    {% for post in blog_posts %}
+    <li>{{ post.title }} - {{ post.published_at }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

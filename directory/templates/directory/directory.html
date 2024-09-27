@@ -1,0 +1,12 @@
+{% extends 'directory/base.html' %}
+
+{% block title %}Directory | The Pretoria Local{% endblock %}
+
+{% block content %}
+<h1>Business Directory</h1>
+<ul>
+    {% for business in businesses %}
+    <li>{{ business.name }} - {{ business.category.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

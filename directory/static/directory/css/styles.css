@@ -1,0 +1,438 @@
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* General body styles */
+html, body {
+    height: 100%; /* Ensure body height doesn't exceed viewport */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F1EFE7;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header styles */
+header {
+    background-color: #F1EFE7;
+    padding: 10px;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #F1EFE7;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 40px; /* Increase space between the logo and the links */
+}
+
+.logo-image {
+    height: 7.6rem;
+    width: auto;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin-right: 50px; /* Increase space between individual links */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 1.8rem; /* Slightly increase font size of links */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: #000000;
+    font-weight: 700;
+}
+
+.navbar a.active {
+    font-weight: 700;
+    color: #000000;
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Hero section styles */
+.hero-section {
+    width: 100%;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #F1EFE7;
+    color: rgb(0, 0, 0);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    
+    margin-bottom: 30px; 
+}
+.learn-more-button {
+    margin-top: 30px;
+    display: inline-block; /* Makes it behave like a button */
+    background-color: #0d150ada; /* Button background color */
+    color: white; /* Button text color */
+    padding: 15px 30px; /* Padding inside the button */
+    font-size: 1.4rem; /* Font size for the button text */
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    margin-top: 20px; /* Space between the button and the text above */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the button */
+.learn-more-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+
+
+
+
+
+/* Info card styles */
+.info-card.card {
+    text-align: center;
+    width: 100%;
+    background-color: #0d150ada;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1800px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.first-card.card {
+    text-align: center;
+    width: 100%; /* Full width */
+    background-color: #0d150ada; /* Background color */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    margin: 20px auto; /* Center the card horizontally */
+    max-width: 1800px; /* Set a maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Playfair Display', serif; /* Font family */
+    color: #ffffff; /* Text color */
+    font-size: 1.2rem; /* Default font size */
+    line-height: 1.5; /* Improve line spacing for readability */
+}
+
+
+
+.first-card.card h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.first-card.card p {
+    font-weight: 100; /* Thin font */
+    font-style: italic; /* Italic text */
+    font-size: 1.4rem; /* Adjust size as necessary */
+    line-height: 1.6;
+    color: #ffffff; /* Ensure it contrasts well with the background */
+    margin: 0;
+    white-space: normal;
+    word-spacing: normal;
+    letter-spacing: 0;
+}
+
+
+/* Card container styles */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 1800px;
+}
+
+/* Side card styles */
+.side-card.card {
+    text-align: center;
+    background-color: #0d150ada;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    flex: 1;
+    min-width: 0;
+}
+.side-card.card p {
+    font-weight: 100; /* Thin font */
+    font-style: italic; /* Italic text */
+    font-size: 1.2rem; /* Adjust size as necessary */
+    line-height: 1.6;
+    color: #ffffff; /* Ensure it contrasts well with the background */
+    margin: 0;
+    white-space: normal;
+    word-spacing: normal;
+    letter-spacing: 0;
+}
+
+.side-card.card:first-child {
+    margin-right: 20px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .side-card.card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* Contact Us Page Styles */
+.contact-us-section {
+    background-color: #F1EFE7;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Card Styles */
+.contact-card {
+    background-color: #0d150a; /* Dark background for card */
+    border-radius: 20px; /* Rounded corners */
+    padding: 30px; /* Padding inside the card */
+    margin: 20px auto; /* Center the card */
+    max-width: 800px; /* Maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: #ffffff; /* Text color */
+}
+
+/* Contact Info Styles */
+.contact-info h2 {
+    font-size: 2.2rem;
+    color: #ffffff; /* Heading color */
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.6rem;
+    color: #ffffff; /* Text color */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #4CAF50; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Social Media Links */
+.social-media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+}
+
+.social-media-list li {
+    margin-right: 20px;
+}
+
+.social-media-list a {
+    font-size: 1.6rem;
+    color: #4CAF50; /* Link color */
+    text-decoration: none;
+}
+
+.social-media-list a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.5rem; /* Adjust title size for mobile */
+    }
+
+    .contact-card {
+        padding: 20px; /* Adjust card padding for mobile */
+    }
+
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info p,
+    .social-media-list a {
+        font-size: 1.4rem; /* Adjust font size for mobile */
+    }
+}
+
+
+
+
+
+
+.get-on-board-section {
+    padding: 2rem;
+    background-color: #F1EFE7; /* Light background for better contrast */
+}
+
+.card-container {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    gap: 1.5rem; /* Space between cards */
+}
+
+/* New Media Query for responsiveness */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+}
+
+/* Card styles */
+.card {
+    background-color: #0d150ada; /* Updated background color */
+    border: 1px solid #ddd; /* Light border for contrast */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem; /* Inner padding */
+    text-align: center; /* Center text inside cards */
+    color: #ffffff; /* White text for contrast */
+    transition: transform 0.3s; /* Add a hover effect */
+}
+
+/* Hover effect */
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
+/* Center the last card */
+.center-card {
+    grid-column: 1 / -1; /* Make it span across all columns in the grid */
+    margin-top: 1rem; /* Optional: Add margin for spacing */
+}
+
+/* Headings for cards */
+.card h3 {
+    margin-bottom: 1rem; /* Space below the heading */
+}
+
+.card p {
+    margin-bottom: 0; /* Remove bottom margin from paragraph */
+}
+
+.reasons-section, .how-to-get-on-board, .additional-branding {
+    margin-bottom: 2rem;
+    text-align: center; /* Center-align text for all sections */
+}
+.how-to-get-on-board h2
+{
+    color: #000000; /* Dark green for main headings */
+    font-size: 2.5rem; /* Increase font size for emphasis */
+    margin-bottom: 1.5rem; /* Space below heading */
+
+}
+
+.package-card ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center align the text */
+}
+
+/* Center align the list items */
+.package-card li {
+    padding: 0.5rem 0; /* Add spacing around list items */
+    color: #000000; /* Set text color for contrast */
+}
+
+h1 {
+    color: #000000; /* Dark green for main headings */
+    font-size: 2.5rem; /* Increase font size for emphasis */
+    margin-bottom: 1.5rem; /* Space below heading */
+}
+
+h2, h3 {
+    color: #ffffff; /* Set a consistent color for sub-headings */
+    margin-top: 1.5rem; /* Space above sub-headings */
+    font-size: 1.8rem; /* Increase size for better readability */
+}
+
+p {
+    font-size: 1.1rem; /* Slightly larger font size for paragraphs */
+    line-height: 1.6; /* Improve readability with line-height */
+    margin: 0 auto; /* Center paragraphs */
+    max-width: 800px; /* Limit width for better text alignment */
+    padding: 0 1rem; /* Padding for mobile responsiveness */
+}
+
+.package-container {
+    background-color: aqua;
+    display: flex;
+    justify-content: center; /* Center package cards */
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allow wrapping to maintain responsiveness */
+}
+
+/* Additional adjustments for unordered lists */
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    text-align: left; /* Align list text to the left */
+}
+
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
