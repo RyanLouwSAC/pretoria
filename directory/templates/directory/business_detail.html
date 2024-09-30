@@ -1,0 +1,33 @@
+{% extends 'directory/base.html' %}
+
+{% block title %}{{ business.name }} | Business Details{% endblock %}
+
+{% block content %}
+<h1>{{ business.name }}</h1>
+
+<div class="business-detail">
+    <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" class="business-logo">
+    
+    <h3>Contact Information</h3>
+    <p>Phone: {{ business.contact_number }}</p>
+    <p>Email: <a href="mailto:{{ business.email }}">{{ business.email }}</a></p>
+    <p>Website: <a href="{{ business.website }}" target="_blank">{{ business.website }}</a></p>
+    
+    <h3>Address</h3>
+    <p>{{ business.address }}</p>
+    
+    <h3>Social Media</h3>
+    {% if business.social_links %}
+        <ul>
+        {% for platform, link in business.social_links.items %}
+            <li><a href="{{ link }}" target="_blank">{{ platform }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No social media links provided.</p>
+    {% endif %}
+</div>
+
+<a href="{% url 'directory' %}">Back to Directory</a>
+
+{% endblock %}

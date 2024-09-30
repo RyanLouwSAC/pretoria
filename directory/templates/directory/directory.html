@@ -1,12 +1,63 @@
 {% extends 'directory/base.html' %}
+{% load static %}
 
 {% block title %}Directory | The Pretoria Local{% endblock %}
 
 {% block content %}
-<h1>Business Directory</h1>
-<ul>
-    {% for business in businesses %}
-    <li>{{ business.name }} - {{ business.category.name }}</li>
-    {% endfor %}
-</ul>
+<div class="Directory_container">
+    <h1>Business Directory</h1>
+
+    <!-- Search and Filter Form -->
+    <form method="GET" action="{% url 'directory' %}" class="search-filter-form">
+        <div class="input-container">
+            <input type="text" name="q" placeholder="Search by business name" value="{{ search_query }}" id="search-bar">
+            <button type="submit" class="search-button" aria-label="Search">
+                <span class="search-icon">🔍 Search</span> <!-- Use a span for the emoji -->
+            </button>
+        </div>
+        
+        <select name="category" id="category-select">
+            <option value="">All Categories</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}" {% if category.id == selected_category_id|stringformat:"d" %}selected{% endif %}>
+                {{ category.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </form>
+
+
+
+    <!-- Categories Grid -->
+    <div id="category-grid" class="category-grid">
+        {% if not search_query %}
+            {% for category in categories %}
+            <div class="category-card" style="background-image: url('{{ category.image }}');">
+                <h3>{{ category.name }}</h3>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+    <!-- Business List (only shows if there is a search query or selected category) -->
+    <div id="business-grid" class="business-grid">
+        {% if search_query or selected_category_id %}
+            {% if businesses %}
+                {% for business in businesses %}
+                <div class="business-card">
+                    <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" style="width: 100%; height: auto;">
+                    <h3>{{ business.name }}</h3>
+                    <p>{{ business.category.name }}</p>
+                    <a href="{% url 'business_detail' business.id %}">View Details</a>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No businesses found matching your criteria.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
+
+<script src="{% static 'directory/js/search.js' %}"></script>

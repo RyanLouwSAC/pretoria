@@ -315,114 +315,417 @@ header {
 
 
 
+
+
+
+
+
+
+
+/* Section styles */
 .get-on-board-section {
-    padding: 2rem;
-    background-color: #F1EFE7; /* Light background for better contrast */
+    padding: 40px 20px; /* Padding for the section */
 }
 
-.card-container {
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
-    gap: 1.5rem; /* Space between cards */
+/* Reasons Section Styles */
+.reasons-section {
+    text-align: center; /* Center text */
+    margin-bottom: 40px; /* Space below the section */
 }
 
-/* New Media Query for responsiveness */
+.reasons-section h1 {
+    font-size: 3rem; /* Title size */
+    color: #000; /* Title color */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.reasons-card-container {
+    display: grid; /* Grid layout for cards */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center container */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .reasons-card-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+}
+
 @media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: 1fr; /* One column on smaller screens */
+    .reasons-card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .reasons-card-container {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
     }
 }
 
 /* Card styles */
 .card {
-    background-color: #0d150ada; /* Updated background color */
-    border: 1px solid #ddd; /* Light border for contrast */
-    border-radius: 8px; /* Rounded corners */
-    padding: 1.5rem; /* Inner padding */
-    text-align: center; /* Center text inside cards */
-    color: #ffffff; /* White text for contrast */
-    transition: transform 0.3s; /* Add a hover effect */
+    background-color: #0d150a; /* Dark background for cards */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside cards */
+    color: #ffffff; /* Text color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s; /* Transition effect */
 }
 
-/* Hover effect */
 .card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
 }
 
-/* Center the last card */
-.center-card {
-    grid-column: 1 / -1; /* Make it span across all columns in the grid */
-    margin-top: 1rem; /* Optional: Add margin for spacing */
-}
-
-/* Headings for cards */
 .card h3 {
-    margin-bottom: 1rem; /* Space below the heading */
+    font-size: 1.8rem; /* Title size in cards */
+    margin-bottom: 10px; /* Space below title */
 }
 
 .card p {
-    margin-bottom: 0; /* Remove bottom margin from paragraph */
+    font-size: 1.2rem; /* Text size */
+    line-height: 1.5; /* Line spacing */
 }
 
-.reasons-section, .how-to-get-on-board, .additional-branding {
-    margin-bottom: 2rem;
-    text-align: center; /* Center-align text for all sections */
-}
-.how-to-get-on-board h2
-{
-    color: #000000; /* Dark green for main headings */
-    font-size: 2.5rem; /* Increase font size for emphasis */
-    margin-bottom: 1.5rem; /* Space below heading */
-
+/* How to Get On Board Section Styles */
+.how-to-get-on-board {
+    text-align: center; /* Center text */
+    margin-bottom: 40px; /* Space below the section */
 }
 
-.package-card ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    text-align: center; /* Center align the text */
+.how-to-get-on-board h1 {
+    font-size: 3rem; /* Title size */
+    color: #000; /* Title color */
+    margin-bottom: 20px; /* Space below title */
 }
-
-/* Center align the list items */
-.package-card li {
-    padding: 0.5rem 0; /* Add spacing around list items */
-    color: #000000; /* Set text color for contrast */
-}
-
-h1 {
-    color: #000000; /* Dark green for main headings */
-    font-size: 2.5rem; /* Increase font size for emphasis */
-    margin-bottom: 1.5rem; /* Space below heading */
-}
-
-h2, h3 {
-    color: #ffffff; /* Set a consistent color for sub-headings */
-    margin-top: 1.5rem; /* Space above sub-headings */
-    font-size: 1.8rem; /* Increase size for better readability */
-}
-
-p {
-    font-size: 1.1rem; /* Slightly larger font size for paragraphs */
-    line-height: 1.6; /* Improve readability with line-height */
-    margin: 0 auto; /* Center paragraphs */
-    max-width: 800px; /* Limit width for better text alignment */
-    padding: 0 1rem; /* Padding for mobile responsiveness */
-}
-
 .package-container {
-    background-color: aqua;
-    display: flex;
-    justify-content: center; /* Center package cards */
-    gap: 1.5rem;
-    flex-wrap: wrap; /* Allow wrapping to maintain responsiveness */
+    display: flex; /* Flex layout for package cards */
+    justify-content: space-evenly; /* Space between cards */
+    flex-wrap: wrap; /* Wrap to next line if necessary */
 }
 
-/* Additional adjustments for unordered lists */
-ul {
-    list-style-type: none; /* Remove default list styling */
-    padding: 0;
-    margin: 0; /* Remove default margin */
-    text-align: left; /* Align list text to the left */
+
+.Silver-package-card {
+    background: linear-gradient(135deg, #D7D7D7 0%, #C0C0C0 30%, #FFFFFF 70%, #D7D7D7 100%); /* Silver gradient with more fading */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside package cards */
+    color: #000; /* Text color */
+    width: 400px; /* Width for package cards */
+    margin: 10px; /* Margin for spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s; /* Transition effect */
+    background-clip: padding-box; /* Ensure background gradient does not overflow */
+    position: relative; /* Position for glint effect */
 }
+
+
+.Gold-package-card {
+    background: linear-gradient(135deg, #F2D900 0%, #FFD700 40%, #FFFFFF 60%, #F2D900 100%); /* Gold gradient with more fading */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside package cards */
+    color: #000; /* Text color */
+    width: 400px; /* Width for package cards */
+    margin: 10px; /* Margin for spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s; /* Transition effect */
+    background-clip: padding-box; /* Ensure background gradient does not overflow */
+    position: relative; /* Position for glint effect */
+}
+
+
+/* Glint effect */
+.Silver-package-card::before,
+.Gold-package-card::before {
+    content: "";
+    position: absolute;
+    top: -15%; /* Positioning of glint */
+    left: -15%; /* Positioning of glint */
+    width: 130%; /* Width of glint */
+    height: 130%; /* Height of glint */
+    background: rgba(255, 255, 255, 0.3); /* White transparent glint */
+    border-radius: 50%; /* Rounded glint */
+    transform: rotate(30deg); /* Rotate for diagonal glint */
+    opacity: 0.2; /* Opacity of glint */
+    pointer-events: none; /* Prevent interaction with glint */
+}
+
+
+
+
+
+
+
+.Gold-package-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
+.Gold-package-card h4 {
+    font-size: 2rem; /* Package title size */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.Gold-package-card p {
+    font-size: 1.2rem; /* Text size */
+}
+
+
+.Silver-package-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+
+.Silver-package-card h4 {
+    font-size: 2rem; /* Package title size */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.Silver-package-card p {
+    font-size: 1.2rem; /* Text size */
+}
+.Silver-package-card ul,
+.Gold-package-card ul {
+    list-style-type: none; /* Removes the bullet points */
+    padding-left: 0; /* Optional: Removes the default left padding */
+    margin-left: 0; /* Optional: Removes any margin if needed */
+}
+
+
+
+
+
+
+
+
+/* Additional Branding Section Styles */
+.additional-branding {
+    text-align: center; /* Center text */
+    margin-top: 40px; /* Space above section */
+}
+
+.additional-branding h1 {
+    font-size: 3rem; /* Title size */
+    color: #000; /* Title color */
+    margin-bottom: 20px; /* Space below title */
+}
+
+.branding-kit-container {
+    display: flex; /* Flex layout for branding items */
+    justify-content: center; /* Center items */
+    flex-wrap: wrap; /* Wrap items if necessary */
+    gap: 20px; /* Space between items */
+}
+
+.branding-item {
+    /* background-color: #0d150a;  */
+    color: #000000; /* Text color */
+    padding: 15px; /* Padding inside items */
+    border-radius: 10px; /* Rounded corners */
+    width: 200px; /* Fixed width for items */
+    text-align: center; /* Center text */
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .reasons-section h1,
+    .how-to-get-on-board h1,
+    .additional-branding h1 {
+        font-size: 2.5rem; /* Adjust title size for mobile */
+    }
+
+    .package-container {
+        flex-direction: column; /* Stack package cards on small screens */
+        align-items: center; /* Center align */
+    }
+
+    .package-card {
+        width: 90%; /* Full width on small screens */
+        max-width: 400px; /* Cap the max width to avoid being too wide */
+        margin: 10px 0; /* Vertical margin */
+    }
+
+    .branding-item {
+        width: 90%; /* Full width for branding items on small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.Directory_container{
+    padding: 16px;
+}
+
+
+.search-filter-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    flex: 1; /* Allow the input container to take all available space */
+    position: relative; /* For positioning the search icon/button */
+}
+
+#search-bar {
+    width: 100%; /* Full width of the input container */
+    padding: 10px 40px 10px 10px; /* Left padding for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    position: absolute; /* Position the button absolutely inside the input container */
+    right: 5px; /* Align to the right */
+    top: 0; /* Align to the top */
+    bottom: 0; /* Align to the bottom */
+    border: none; /* Remove border */
+    background-color: transparent; /* Transparent background */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.search-icon {
+    font-size: 18px; /* Adjust size of the emoji */
+    line-height: 40px; /* Center it vertically */
+}
+
+#category-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px; /* Space between input and dropdown */
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: #0a3d19;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Category Grid Styles */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.category-card {
+    background-color: white;
+    background-size: cover; /* Cover the entire card */
+    background-position: center; /* Center the image */
+    border-radius: 10px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    color: rgb(255, 255, 255); /* Text color */
+    position: relative; /* Positioning context for the text */
+    height: 200px; /* Fixed height for cards */
+    
+    /* Flexbox properties for centering */
+    display: flex; /* Enable Flexbox */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+}
+
+.category-card h3 {
+    background: rgba(0, 0, 0, 0.5);  
+    padding: 10px; /* Increased padding around text */
+    border-radius: 5px; /* Rounded corners for text background */
+    margin: 0; /* Remove default margin */
+}
+
+
+/* Optional: Adjust color for card when text is not on hover */
+.category-card:hover {
+    opacity: 0.8; /* Slightly dim the card on hover */
+}
+
+
+
+
+
+
+/* Business Grid Styles */
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.business-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.business-logo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.view-details {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.view-details:hover {
+    background-color: #45a049;
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .search-filter-form {
+        flex-direction: column;
+    }
+
+    #search-bar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #category-select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
