@@ -46,7 +46,9 @@
             {% if businesses %}
                 {% for business in businesses %}
                 <div class="business-card">
-                    <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" style="width: 100%; height: auto;">
+                    <a href="{% url 'business_detail' business.id %}">  <!-- Make the logo clickable -->
+                        <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" style="width: 100%; height: auto;">
+                    </a>
                     <h3>{{ business.name }}</h3>
                     <p>{{ business.category.name }}</p>
                     <a href="{% url 'business_detail' business.id %}">View Details</a>
@@ -57,6 +59,7 @@
             {% endif %}
         {% endif %}
     </div>
+    
 </div>
 {% endblock %}
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -20,10 +21,29 @@ class Business(models.Model):
     def __str__(self):
         return self.name
 
+class Promotion(models.Model):
+      title = models.CharField(max_length=255)
+      def __str__(self):
+        return self.title
+
 class BlogPost(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
     published_at = models.DateTimeField()
+    name = models.CharField(max_length=255 ,null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+
+    number = models.CharField(
+        max_length=13,
+        validators=[RegexValidator(regex=r'^\+?1?\d{9,13}$', message="Enter a valid phone number.")],
+        verbose_name="Phone Number",
+        null=True,  # Allow null values in the database
+        blank=True  # Allow blank input in forms
+    )
+
+
+    websiteLink = models.URLField(max_length=255, blank=True, null=True)  # Updated to URLField for validation
+    isOnPromotion = models.BooleanField(default=False)  # BooleanField, default set to False
 
     def __str__(self):
         return self.title

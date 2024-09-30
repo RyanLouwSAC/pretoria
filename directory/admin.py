@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Business, Category, BlogPost, Membership
+from .models import Business, Category, BlogPost, Membership,Promotion
 
 @admin.register(Business)
 class BusinessAdmin(admin.ModelAdmin):
@@ -19,3 +19,8 @@ class BlogPostAdmin(admin.ModelAdmin):
 @admin.register(Membership)
 class MembershipAdmin(admin.ModelAdmin):
     list_display = ('business', 'contact_info')
+
+
+@admin.register(Promotion)
+class PromotionAdmin(admin.ModelAdmin):
+    list_display = ('title',)  # Note the comma to make it a tuple
