@@ -19,26 +19,24 @@
         <select name="category" id="category-select">
             <option value="">All Categories</option>
             {% for category in categories %}
-            <option value="{{ category.id }}" {% if category.id == selected_category_id|stringformat:"d" %}selected{% endif %}>
+            <option value="{{ category.id }}" {% if category.id|stringformat:"d" == selected_category_id|stringformat:"d" %}selected{% endif %}>
                 {{ category.name }}
             </option>
             {% endfor %}
         </select>
     </form>
 
-
-
     <!-- Categories Grid -->
     <div id="category-grid" class="category-grid">
         {% if not search_query %}
             {% for category in categories %}
-            <div class="category-card" style="background-image: url('{{ category.image }}');">
+            <!-- Make category cards clickable by linking to the same page with the category as a query parameter -->
+            <a href="{% url 'directory' %}?category={{ category.id }}" class="category-card" style="background-image: url('{{ category.image }}');">
                 <h3>{{ category.name }}</h3>
-            </div>
+            </a>
             {% endfor %}
         {% endif %}
     </div>
-
 
     <!-- Business List (only shows if there is a search query or selected category) -->
     <div id="business-grid" class="business-grid">
@@ -59,7 +57,6 @@
             {% endif %}
         {% endif %}
     </div>
-    
 </div>
 {% endblock %}
 

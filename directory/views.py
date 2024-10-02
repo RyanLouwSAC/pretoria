@@ -12,7 +12,7 @@ def directory_view(request):
     # Get the search query from the request (if any)
     search_query = request.GET.get('q', '')
 
-    # Get the selected category from the dropdown (if any)
+    # Get the selected category from the dropdown or from the URL query parameters (if any)
     selected_category_id = request.GET.get('category', None)
 
     # Filter businesses based on the search query and selected category
@@ -32,6 +32,10 @@ def directory_view(request):
     }
 
     return render(request, 'directory/directory.html', context)
+
+
+
+
 
 
 def business_detail_view(request, pk):
