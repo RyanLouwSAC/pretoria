@@ -4,10 +4,22 @@
 
 {% block content %}
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+    
+    /* General Typography */
+    body {
+        font-family: 'Montserrat', sans-serif; /* Use Montserrat for body text */
+        color: #333; /* Darker text for better readability */
+    }
+
+    h1, h2 {
+        font-family: 'Playfair Display', serif; /* Playfair Display for headers */
+    }
+
     /* Container for overall padding */
     .content-container {
         padding: 0 40px; /* Adjust this value as needed */
-        max-width: 1800px; /* Keep the maximum width */
+        max-width: 1200px; /* Limit maximum width for better readability */
         margin: 0 auto; /* Center the container */
     }
 
@@ -16,137 +28,137 @@
         width: 100%;
         text-align: center;
         padding: 50px 20px;
-        background-color: #F1EFE7; /* Consistent green color */
-        color: #fff; /* White text for better contrast */
-        position: relative; /* Position for potential overlays */
-        overflow: hidden; /* Hide overflow for child elements */
+        background-color: #F1EFE7; /* Light green */
+        color: #2c2c2c; /* Darker color for text contrast */
+        position: relative;
+        overflow: hidden;
+        background-image: url('your-background-image-url.jpg'); /* Add a subtle background image */
+        background-size: cover;
+        background-position: center;
     }
 
     /* Hero title */
     .hero-title {
         font-size: 3.5rem;
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: 30px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for readability */
     }
 
     /* Learn more button */
     .learn-more-button {
         margin-top: 30px;
         display: inline-block;
-        background-color: #0d150a; /* Button background color */
-        color: white; /* Button text color */
-        padding: 15px 30px; /* Padding inside the button */
-        font-size: 1.4rem; /* Font size for button text */
-        border-radius: 30px; /* Rounded corners */
-        text-decoration: none; /* Remove underline */
-        font-weight: bold; /* Bold text */
-        transition: background-color 0.3s ease, transform 0.2s; /* Hover effect */
+        background-color: #0d150a;
+        color: white;
+        padding: 15px 30px;
+        font-size: 1.4rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s;
     }
 
     /* Hover effect for the button */
     .learn-more-button:hover {
-        background-color: #00ff0d; /* Darker green on hover */
-        transform: scale(1.05); /* Scale effect on hover */
+        background-color: #32cd32; /* Softer green on hover */
+        transform: scale(1.05);
     }
 
     /* Info card styles */
     .info-card.card {
         text-align: center;
-        width: 100%;
-        background-color: #0d150a; /* Updated for consistency */
-        border-radius: 20px; /* Rounded corners */
-        padding: 20px; /* Padding inside the card */
-        margin: 20px auto; /* Center the card horizontally */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
-        font-family: 'Playfair Display', serif; /* Font family */
-        color: #ffffff; /* Text color */
-        font-size: 1.2rem; /* Default font size */
-        line-height: 1.5; /* Improve line spacing for readability */
+        background-color: #0d150a;
+        border-radius: 20px;
+        padding: 30px;
+        margin: 20px auto;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif; /* Body font for readability */
+        color: #ffffff;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 700px; /* Limit width for better readability */
     }
 
     /* First card styles */
     .first-card.card {
         text-align: center;
-        width: 100%; /* Full width */
-        background-color: #0d150a; /* Background color */
-        border-radius: 20px; /* Rounded corners */
-        padding: 20px; /* Padding inside the card */
-        margin: 20px auto; /* Center the card horizontally */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
-        font-family: 'Playfair Display', serif; /* Font family */
-        color: #ffffff; /* Text color */
-        font-size: 1.2rem; /* Default font size */
-        line-height: 1.5; /* Improve line spacing for readability */
+        background-color: #0d150a;
+        border-radius: 20px;
+        padding: 30px;
+        margin: 20px auto;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif; /* Body font for readability */
+        color: #ffffff;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 700px;
     }
 
     /* First card title */
     .first-card.card h2 {
-        font-size: 2.5rem; /* Title font size */
-        font-weight: 700; /* Bold title */
-        margin-bottom: 10px; /* Space below title */
-        color: #ffffff; /* Title color */
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #ffffff;
     }
 
-    /* First card paragraph styles */
+    /* First card paragraph */
     .first-card.card p {
-        font-weight: 100; /* Thin font */
-        font-style: italic; /* Italic text */
-        font-size: 1.4rem; /* Adjust size as necessary */
-        line-height: 1.6; /* Improve line height */
-        color: #ffffff; /* Ensure contrast with background */
-        margin: 0; /* Remove margin */
-        white-space: normal; /* Wrap text */
-        word-spacing: normal; /* Normal spacing */
-        letter-spacing: 0; /* Normal letter spacing */
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: #ffffff;
     }
 
     /* Card container styles */
     .card-container {
-        display: flex; /* Flexbox for layout */
-        justify-content: space-between; /* Space between cards */
-        gap: 10px;
-        padding: 0; /* No padding */
-        margin: 20px auto; /* Center the container */
-        width: 100%; /* Full width */
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 0;
+        margin: 20px auto;
+        width: 100%;
     }
 
     /* Side card styles */
     .side-card.card {
-        text-align: center; /* Center text */
-        background-color: #0d150a; /* Background color */
-        border-radius: 20px; /* Rounded corners */
-        padding: 20px; /* Padding inside the card */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
-        font-family: 'Playfair Display', serif; /* Font family */
-        color: #ffffff; /* Text color */
-        flex: 1; /* Flex grow */
-        min-width: 0; /* Prevent overflow */
+        text-align: center;
+        background-color: #f1f1f1; /* Lighter background for contrast */
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif; /* Body font for readability */
+        color: #333333; /* Darker text */
+        flex: 1;
     }
 
-    /* Side card paragraph styles */
+    /* Side card title */
+    .side-card.card h2 {
+        font-family: 'Playfair Display', serif; /* Serif for headers */
+        font-size: 2rem;
+        color: #0d150a;
+        margin-bottom: 15px;
+    }
+
+    /* Side card paragraph */
     .side-card.card p {
-        font-weight: 100; /* Thin font */
-        font-style: italic; /* Italic text */
-        font-size: 1.2rem; /* Adjust size as necessary */
-        line-height: 1.6; /* Improve line height */
-        color: #ffffff; /* Ensure contrast with background */
-        margin: 0; /* Remove margin */
-        white-space: normal; /* Wrap text */
-        word-spacing: normal; /* Normal spacing */
-        letter-spacing: 0; /* Normal letter spacing */
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #333333;
     }
 
     /* Responsive behavior */
     @media (max-width: 768px) {
         .card-container {
-            flex-direction: column; /* Stack cards vertically on small screens */
-            width: 100%; /* Full width */
+            flex-direction: column;
+            width: 100%;
         }
 
         .side-card.card {
-            width: 100%; /* Full width for side cards */
-            margin-bottom: 20px; /* Space below each card */
+            width: 100%;
+            margin-bottom: 20px;
         }
     }
 </style>
@@ -175,42 +187,28 @@
     <div class="first-card card">
         <h2>About</h2>
         <p>
-            THE PRETORIA LOCAL IS A COMMUNITY-FOCUSED &nbsp;&nbsp; BUSINESS &nbsp;&nbsp; THAT &nbsp; &nbsp; AIMS &nbsp;&nbsp;TO STIMULATE&nbsp;&nbsp; THE&nbsp;&nbsp; LOCAL&nbsp;&nbsp; ECONOMY&nbsp;&nbsp; BY CONNECTING BUSINESSES WITH LOCAL CONSUMERS.&nbsp;&nbsp; THROUGH&nbsp;&nbsp; A &nbsp;&nbsp;USER-FRIENDLY&nbsp;&nbsp; WEBSITE,&nbsp;&nbsp; WE&nbsp;&nbsp; OFFER&nbsp;&nbsp; AN &nbsp;&nbsp;EXCLUSIVE&nbsp;&nbsp; BUSINESS &nbsp;&nbsp;DIRECTORY WHERE LOCAL ENTREPRENEURS CAN &nbsp;&nbsp;LIST&nbsp;&nbsp; THEIR &nbsp;&nbsp;SERVICES AND PRODUCTS. WE ALSO PROVIDE SOCIAL&nbsp;&nbsp; MEDIA&nbsp;&nbsp; PROMOTION&nbsp;&nbsp; SERVICES TO INCREASE VISIBILITY FOR THESE BUSINESSES, CREATING&nbsp;&nbsp; A &nbsp;&nbsp;STRONG&nbsp;&nbsp; ONLINE PRESENCE AND FOSTERING COMMUNITY ENGAGEMENT.
+            THE PRETORIA LOCAL IS A COMMUNITY-FOCUSED BUSINESS THAT AIMS TO STIMULATE THE LOCAL ECONOMY BY CONNECTING
+            BUSINESSES WITH LOCAL CONSUMERS. THROUGH A USER-FRIENDLY WEBSITE, WE OFFER AN EXCLUSIVE BUSINESS DIRECTORY WHERE
+            LOCAL ENTREPRENEURS CAN LIST THEIR SERVICES AND PRODUCTS. WE ALSO PROVIDE SOCIAL MEDIA PROMOTION SERVICES TO
+            INCREASE VISIBILITY FOR THESE BUSINESSES, CREATING A STRONG ONLINE PRESENCE AND FOSTERING COMMUNITY ENGAGEMENT.
         </p>
     </div>
 
     <div class="card-container">
         <div class="side-card card">
             <h2>OUR VISION</h2>
-            <p>TO BECOME THE LEADING PLATFORM
-                THAT &nbsp;&nbsp;FOSTERS&nbsp;&nbsp; A &nbsp;&nbsp;THRIVING&nbsp;&nbsp; AND
-                INTERCONNECTED LOCAL ECONOMY IN
-                PRETORIA,&nbsp;&nbsp; WHERE&nbsp;&nbsp; EVERY&nbsp;&nbsp; BUSINESS,
-                FROM SMALL STARTUPS TO
-                ESTABLISHED &nbsp;&nbsp;ENTERPRISES,&nbsp;&nbsp; CAN GROW,
-                SUCCEED,&nbsp;&nbsp; AND&nbsp;&nbsp; CONTRIBUTE &nbsp;&nbsp;TO&nbsp;&nbsp; A
-                VIBRANT COMMUNITY.
-            </p>
+            <p>TO BECOME THE LEADING PLATFORM THAT FOSTERS A THRIVING AND INTERCONNECTED LOCAL ECONOMY IN
+                PRETORIA, WHERE EVERY BUSINESS, FROM SMALL STARTUPS TO ESTABLISHED ENTERPRISES, CAN GROW, SUCCEED,
+                AND CONTRIBUTE TO A VIBRANT COMMUNITY.</p>
         </div>
         <div class="side-card card">
             <h2>OUR MISSION</h2>
-            <p>OUR MISSION IS TO SUPPORT AND
-                EMPOWER&nbsp;&nbsp; LOCAL&nbsp;&nbsp; BUSINESSES&nbsp;&nbsp; IN
-                PRETORIA BY PROVIDING A DYNAMIC
-                ONLINE&nbsp;&nbsp; DIRECTORY&nbsp;&nbsp; AND&nbsp;&nbsp; LEVERAGING
-                SOCIAL MEDIA TO PROMOTE THEIR
-                PRODUCTS&nbsp;&nbsp; AND&nbsp;&nbsp; SERVICES.&nbsp;&nbsp; WE&nbsp;&nbsp; AIM&nbsp;&nbsp; TO
-                CONNECT BUSINESSES WITH THE LOCAL
-                COMMUNITY,&nbsp;&nbsp; DRIVING&nbsp;&nbsp; ECONOMIC
-                GROWTH AND FOSTERING A STRONG
-                SENSE &nbsp;&nbsp;OF&nbsp;&nbsp; COMMUNITY &nbsp;&nbsp;PRIDE &nbsp;&nbsp;IN
-                SHOPPING AND SUPPORTING LOCAL.
-                THROUGH&nbsp;&nbsp; OUR&nbsp;&nbsp; EFFORTS,&nbsp;&nbsp; WE&nbsp;&nbsp; STRIVE&nbsp;&nbsp; TO
-                CREATE A SUSTAINABLE AND
-                PROSPEROUS&nbsp;&nbsp; ENVIRONMENT&nbsp;&nbsp; WHERE
-                EVERY LOCAL BUSINESS HAS THE
-                OPPORTUNITY&nbsp;&nbsp; TO&nbsp;&nbsp; FLOURISH.
-            </p>
+            <p>OUR MISSION IS TO SUPPORT AND EMPOWER LOCAL BUSINESSES IN PRETORIA BY PROVIDING A DYNAMIC
+                ONLINE DIRECTORY AND LEVERAGING SOCIAL MEDIA TO PROMOTE THEIR PRODUCTS AND SERVICES. WE AIM TO
+                CONNECT BUSINESSES WITH THE LOCAL COMMUNITY, DRIVING ECONOMIC GROWTH AND FOSTERING A STRONG
+                SENSE OF COMMUNITY PRIDE IN SHOPPING AND SUPPORTING LOCAL. THROUGH OUR EFFORTS, WE STRIVE TO
+                CREATE A SUSTAINABLE AND PROSPEROUS ENVIRONMENT WHERE EVERY LOCAL BUSINESS HAS THE OPPORTUNITY
+                TO FLOURISH.</p>
         </div>
     </div>
 </div>
