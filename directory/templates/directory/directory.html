@@ -4,6 +4,139 @@
 {% block title %}Directory | The Pretoria Local{% endblock %}
 
 {% block content %}
+<!-- Custom Styles -->
+<style>
+.Directory_container {
+    padding: 16px;
+}
+
+.search-filter-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    flex: 1; /* Allow the input container to take all available space */
+    position: relative; /* For positioning the search icon/button */
+}
+
+#search-bar {
+    width: 100%; /* Full width of the input container */
+    padding: 10px 40px 10px 10px; /* Left padding for the icon */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    position: absolute; /* Position the button absolutely inside the input container */
+    right: 5px; /* Align to the right */
+    top: 0; /* Align to the top */
+    bottom: 0; /* Align to the bottom */
+    border: none; /* Remove border */
+    background-color: transparent; /* Transparent background */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.search-icon {
+    font-size: 18px; /* Adjust size of the emoji */
+    line-height: 40px; /* Center it vertically */
+}
+
+#category-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px; /* Space between input and dropdown */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #0a3d19;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Category Grid Styles */
+.category-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px; /* Optional: limit grid width */
+    margin: 0 auto; /* Center the entire grid on the page */
+    padding: 20px;
+}
+
+/* Wrapper for Category Card */
+.category-card-wrapper {
+    display: flex;
+    justify-content: center; /* Center each card horizontally */
+    align-items: center; /* Center vertically if needed */
+    width: 100%; /* Allow it to take full width inside the grid */
+    max-width: 200px; /* Max width similar to the card */
+}
+
+/* Category card styles */
+.category-card {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    max-width: 200px; /* Ensures all cards have the same size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-card h3 {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.category-card:hover {
+    opacity: 0.8;
+}
+
+/* Business Grid Styles */
+.business-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.business-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.business-logo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+</style>
+
 <div class="Directory_container">
     <h1>Business Directory</h1>
 
@@ -26,38 +159,44 @@
         </select>
     </form>
 
-    <!-- Categories Grid -->
-    <div id="category-grid" class="category-grid">
-        {% if not search_query %}
-            {% for category in categories %}
-            <!-- Make category cards clickable by linking to the same page with the category as a query parameter -->
-            <a href="{% url 'directory' %}?category={{ category.id }}" class="category-card" style="background-image: url('{{ category.image }}');">
-                <h3>{{ category.name }}</h3>
-            </a>
-            {% endfor %}
-        {% endif %}
-    </div>
-
-    <!-- Business List (only shows if there is a search query or selected category) -->
-    <div id="business-grid" class="business-grid">
-        {% if search_query or selected_category_id %}
-            {% if businesses %}
-                {% for business in businesses %}
-                <div class="business-card">
-                    <a href="{% url 'business_detail' business.id %}">  <!-- Make the logo clickable -->
-                        <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" style="width: 100%; height: auto;">
+    <div>
+        <!-- Categories Grid -->
+        <div id="category-grid" class="category-grid">
+            {% if not search_query %}
+                {% for category in categories %}
+                <div class="category-card-wrapper">
+                    <a href="{% url 'directory' %}?category={{ category.id }}" class="category-card" style="background-image: url('{{ category.image }}');">
+                        <h3>{{ category.name }}</h3>
                     </a>
-                    <h3>{{ business.name }}</h3>
-                    <p>{{ business.category.name }}</p>
-                    <a href="{% url 'business_detail' business.id %}">View Details</a>
                 </div>
                 {% endfor %}
-            {% else %}
-                <p>No businesses found matching your criteria.</p>
             {% endif %}
-        {% endif %}
+        </div>
+
+        <!-- Business List (only shows if there is a search query or selected category) -->
+        <div id="business-grid" class="business-grid">
+            {% if search_query or selected_category_id %}
+                {% if businesses %}
+                    {% for business in businesses %}
+                    <div class="business-card-wrapper"> <!-- New wrapper div -->
+                        <div class="business-card">
+                            <a href="{% url 'business_detail' business.id %}">
+                                <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" class="business-logo">
+                            </a>
+                            <h3>{{ business.name }}</h3>
+                            <p>{{ business.category.name }}</p>
+                            <a href="{% url 'business_detail' business.id %}">View Details</a>
+                        </div>
+                    </div> <!-- End of new wrapper div -->
+                    {% endfor %}
+                {% else %}
+                    <p>No businesses found matching your criteria.</p>
+                {% endif %}
+            {% endif %}
+        </div>
     </div>
 </div>
+
 {% endblock %}
 
 <script src="{% static 'directory/js/search.js' %}"></script>

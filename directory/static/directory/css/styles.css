@@ -89,151 +89,6 @@ header {
 
 
 
-/* Hero section styles */
-.hero-section {
-    width: 100%;
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #F1EFE7;
-    color: rgb(0, 0, 0);
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    
-    margin-bottom: 30px; 
-}
-.learn-more-button {
-    margin-top: 30px;
-    display: inline-block; /* Makes it behave like a button */
-    background-color: #0d150ada; /* Button background color */
-    color: white; /* Button text color */
-    padding: 15px 30px; /* Padding inside the button */
-    font-size: 1.4rem; /* Font size for the button text */
-    border-radius: 30px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    margin-top: 20px; /* Space between the button and the text above */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect for the button */
-.learn-more-button:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
-}
-
-
-
-
-
-
-/* Info card styles */
-.info-card.card {
-    text-align: center;
-    width: 100%;
-    background-color: #0d150ada;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1800px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Playfair Display', serif;
-    color: #ffffff;
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-.first-card.card {
-    text-align: center;
-    width: 100%; /* Full width */
-    background-color: #0d150ada; /* Background color */
-    border-radius: 20px; /* Rounded corners */
-    padding: 20px; /* Padding inside the card */
-    margin: 20px auto; /* Center the card horizontally */
-    max-width: 1800px; /* Set a maximum width */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    font-family: 'Playfair Display', serif; /* Font family */
-    color: #ffffff; /* Text color */
-    font-size: 1.2rem; /* Default font size */
-    line-height: 1.5; /* Improve line spacing for readability */
-}
-
-
-
-.first-card.card h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.first-card.card p {
-    font-weight: 100; /* Thin font */
-    font-style: italic; /* Italic text */
-    font-size: 1.4rem; /* Adjust size as necessary */
-    line-height: 1.6;
-    color: #ffffff; /* Ensure it contrasts well with the background */
-    margin: 0;
-    white-space: normal;
-    word-spacing: normal;
-    letter-spacing: 0;
-}
-
-
-/* Card container styles */
-.card-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 1800px;
-}
-
-/* Side card styles */
-.side-card.card {
-    text-align: center;
-    background-color: #0d150ada;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Playfair Display', serif;
-    color: #ffffff;
-    flex: 1;
-    min-width: 0;
-}
-.side-card.card p {
-    font-weight: 100; /* Thin font */
-    font-style: italic; /* Italic text */
-    font-size: 1.2rem; /* Adjust size as necessary */
-    line-height: 1.6;
-    color: #ffffff; /* Ensure it contrasts well with the background */
-    margin: 0;
-    white-space: normal;
-    word-spacing: normal;
-    letter-spacing: 0;
-}
-
-.side-card.card:first-child {
-    margin-right: 20px;
-}
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .side-card.card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-
-
 
 /* Contact Us Page Styles */
 .contact-us-section {
@@ -579,128 +434,15 @@ header {
 
 
 
-.Directory_container{
-    padding: 16px;
-}
-
-
-.search-filter-form {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.input-container {
-    flex: 1; /* Allow the input container to take all available space */
-    position: relative; /* For positioning the search icon/button */
-}
-
-#search-bar {
-    width: 100%; /* Full width of the input container */
-    padding: 10px 40px 10px 10px; /* Left padding for the icon */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.search-button {
-    position: absolute; /* Position the button absolutely inside the input container */
-    right: 5px; /* Align to the right */
-    top: 0; /* Align to the top */
-    bottom: 0; /* Align to the bottom */
-    border: none; /* Remove border */
-    background-color: transparent; /* Transparent background */
-    padding: 0; /* Remove padding */
-    cursor: pointer; /* Pointer on hover */
-}
-
-.search-icon {
-    font-size: 18px; /* Adjust size of the emoji */
-    line-height: 40px; /* Center it vertically */
-}
-
-#category-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-left: 10px; /* Space between input and dropdown */
-}
-
-
-button {
-    padding: 10px 15px;
-    background-color: #0a3d19;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-
-/* Category Grid Styles */
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.category-card {
-    background-color: white;
-    background-size: cover; /* Cover the entire card */
-    background-position: center; /* Center the image */
-    border-radius: 10px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
-    text-align: center;
-    color: rgb(255, 255, 255); /* Text color */
-    position: relative; /* Positioning context for the text */
-    height: 200px; /* Fixed height for cards */
-    
-    /* Flexbox properties for centering */
-    display: flex; /* Enable Flexbox */
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center the content */
-}
-
-.category-card h3 {
-    background: rgba(0, 0, 0, 0.5);  
-    padding: 10px; /* Increased padding around text */
-    border-radius: 5px; /* Rounded corners for text background */
-    margin: 0; /* Remove default margin */
-}
-
-
-/* Optional: Adjust color for card when text is not on hover */
-.category-card:hover {
-    opacity: 0.8; /* Slightly dim the card on hover */
-}
 
 
 
 
 
 
-/* Business Grid Styles */
-.business-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
 
-.business-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-}
 
-.business-logo {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
+
 
 .view-details {
     display: inline-block;
@@ -806,6 +548,8 @@ button {
         margin: 10px 0; /* Adjust margins for stacked cards */
     }
 }
+
+
 
 
 

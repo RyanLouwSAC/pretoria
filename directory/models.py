@@ -44,7 +44,7 @@ class BlogPost(models.Model):
 
     websiteLink = models.URLField(max_length=255, blank=True, null=True)  # Updated to URLField for validation
     isOnPromotion = models.BooleanField(default=False)  # BooleanField, default set to False
-
+    image_url = models.URLField(max_length=255, blank=True)
     def __str__(self):
         return self.title
 

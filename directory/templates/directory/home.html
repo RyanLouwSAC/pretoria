@@ -3,66 +3,215 @@
 {% block title %}Home | The Pretoria Local{% endblock %}
 
 {% block content %}
-<div class="hero-section">
-    <h1 class="hero-title">
-        SUPPORTING, GROWING & EMPOWERING<br /> LOCAL BUSINESSES IN PRETORIA
-    </h1>
-    <a href="#" class="learn-more-button">Learn More</a>
-</div>
+<style>
+    /* Container for overall padding */
+    .content-container {
+        padding: 0 40px; /* Adjust this value as needed */
+        max-width: 1800px; /* Keep the maximum width */
+        margin: 0 auto; /* Center the container */
+    }
 
+    /* Hero section styles */
+    .hero-section {
+        width: 100%;
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #F1EFE7; /* Consistent green color */
+        color: #fff; /* White text for better contrast */
+        position: relative; /* Position for potential overlays */
+        overflow: hidden; /* Hide overflow for child elements */
+    }
 
-<div class="info-card card">
-    <p>
-        THE PRETORIA LOCAL IS A DYNAMIC BUSINESS DEDICATED TO UPLIFTING AND EMPOWERING THE LOCAL ECONOMY OF
-        PRETORIA. WE ARE COMMITTED TO SUPPORTING AND GROWING LOCAL BUSINESSES BY FOSTERING A COMMUNITY-DRIVEN MARKETPLACE
-        WHERE SHOPPERS ARE ENCOURAGED TO SPEND THEIR MONEY LOCALLY. OUR MISSION IS TO STIMULATE ECONOMIC GROWTH AND CREATE
-        A THRIVING BUSINESS ENVIRONMENT BY CONNECTING RESIDENTS WITH THE UNIQUE PRODUCTS AND SERVICES OFFERED BY LOCAL
-        ENTREPRENEURS. THROUGH STRATEGIC PARTNERSHIPS, MARKETING INITIATIVES, AND COMMUNITY EVENTS, THE PRETORIA LOCAL IS
-        YOUR TRUSTED PARTNER IN BUILDING A PROSPEROUS AND SUSTAINABLE FUTURE FOR OUR LOCAL BUSINESS COMMUNITY.
-    </p>
-    <p>JOIN US IN MAKING PRETORIA A HUB OF LOCAL EXCELLENCE!</p>
-</div>
+    /* Hero title */
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+    }
 
-<div class="first-card card">
-    <h2>About</h2>
-    <p>
-        THE PRETORIA LOCAL IS A COMMUNITY-FOCUSED &nbsp;&nbsp; BUSINESS &nbsp;&nbsp; THAT &nbsp; &nbsp; AIMS &nbsp;&nbsp;TO STIMULATE&nbsp;&nbsp; THE&nbsp;&nbsp; LOCAL&nbsp;&nbsp; ECONOMY&nbsp;&nbsp; BY CONNECTING BUSINESSES WITH LOCAL CONSUMERS.&nbsp;&nbsp; THROUGH&nbsp;&nbsp; A &nbsp;&nbsp;USER-FRIENDLY&nbsp;&nbsp; WEBSITE,&nbsp;&nbsp; WE&nbsp;&nbsp; OFFER&nbsp;&nbsp; AN &nbsp;&nbsp;EXCLUSIVE&nbsp;&nbsp; BUSINESS &nbsp;&nbsp;DIRECTORY WHERE LOCAL ENTREPRENEURS CAN &nbsp;&nbsp;LIST&nbsp;&nbsp; THEIR &nbsp;&nbsp;SERVICES AND PRODUCTS. WE ALSO PROVIDE SOCIAL&nbsp;&nbsp; MEDIA&nbsp;&nbsp; PROMOTION&nbsp;&nbsp; SERVICES TO INCREASE VISIBILITY FOR THESE BUSINESSES, CREATING&nbsp;&nbsp; A &nbsp;&nbsp;STRONG&nbsp;&nbsp; ONLINE PRESENCE AND FOSTERING COMMUNITY ENGAGEMENT.
-    </p>
-</div>
+    /* Learn more button */
+    .learn-more-button {
+        margin-top: 30px;
+        display: inline-block;
+        background-color: #0d150a; /* Button background color */
+        color: white; /* Button text color */
+        padding: 15px 30px; /* Padding inside the button */
+        font-size: 1.4rem; /* Font size for button text */
+        border-radius: 30px; /* Rounded corners */
+        text-decoration: none; /* Remove underline */
+        font-weight: bold; /* Bold text */
+        transition: background-color 0.3s ease, transform 0.2s; /* Hover effect */
+    }
 
+    /* Hover effect for the button */
+    .learn-more-button:hover {
+        background-color: #00ff0d; /* Darker green on hover */
+        transform: scale(1.05); /* Scale effect on hover */
+    }
 
-<div class="card-container">
-    <div class="side-card card">
-        <h2>OUR VISION</h2>
-        <p>TO BECOME THE LEADING PLATFORM
-            THAT &nbsp;&nbsp;FOSTERS&nbsp;&nbsp; A &nbsp;&nbsp;THRIVING&nbsp;&nbsp; AND
-            INTERCONNECTED LOCAL ECONOMY IN
-            PRETORIA,&nbsp;&nbsp; WHERE&nbsp;&nbsp; EVERY&nbsp;&nbsp; BUSINESS,
-            FROM SMALL STARTUPS TO
-            ESTABLISHED &nbsp;&nbsp;ENTERPRISES,&nbsp;&nbsp; CAN GROW,
-            SUCCEED,&nbsp;&nbsp; AND&nbsp;&nbsp; CONTRIBUTE &nbsp;&nbsp;TO&nbsp;&nbsp; A
-            VIBRANT COMMUNITY.
+    /* Info card styles */
+    .info-card.card {
+        text-align: center;
+        width: 100%;
+        background-color: #0d150a; /* Updated for consistency */
+        border-radius: 20px; /* Rounded corners */
+        padding: 20px; /* Padding inside the card */
+        margin: 20px auto; /* Center the card horizontally */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+        font-family: 'Playfair Display', serif; /* Font family */
+        color: #ffffff; /* Text color */
+        font-size: 1.2rem; /* Default font size */
+        line-height: 1.5; /* Improve line spacing for readability */
+    }
+
+    /* First card styles */
+    .first-card.card {
+        text-align: center;
+        width: 100%; /* Full width */
+        background-color: #0d150a; /* Background color */
+        border-radius: 20px; /* Rounded corners */
+        padding: 20px; /* Padding inside the card */
+        margin: 20px auto; /* Center the card horizontally */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+        font-family: 'Playfair Display', serif; /* Font family */
+        color: #ffffff; /* Text color */
+        font-size: 1.2rem; /* Default font size */
+        line-height: 1.5; /* Improve line spacing for readability */
+    }
+
+    /* First card title */
+    .first-card.card h2 {
+        font-size: 2.5rem; /* Title font size */
+        font-weight: 700; /* Bold title */
+        margin-bottom: 10px; /* Space below title */
+        color: #ffffff; /* Title color */
+    }
+
+    /* First card paragraph styles */
+    .first-card.card p {
+        font-weight: 100; /* Thin font */
+        font-style: italic; /* Italic text */
+        font-size: 1.4rem; /* Adjust size as necessary */
+        line-height: 1.6; /* Improve line height */
+        color: #ffffff; /* Ensure contrast with background */
+        margin: 0; /* Remove margin */
+        white-space: normal; /* Wrap text */
+        word-spacing: normal; /* Normal spacing */
+        letter-spacing: 0; /* Normal letter spacing */
+    }
+
+    /* Card container styles */
+    .card-container {
+        display: flex; /* Flexbox for layout */
+        justify-content: space-between; /* Space between cards */
+        gap: 10px;
+        padding: 0; /* No padding */
+        margin: 20px auto; /* Center the container */
+        width: 100%; /* Full width */
+    }
+
+    /* Side card styles */
+    .side-card.card {
+        text-align: center; /* Center text */
+        background-color: #0d150a; /* Background color */
+        border-radius: 20px; /* Rounded corners */
+        padding: 20px; /* Padding inside the card */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+        font-family: 'Playfair Display', serif; /* Font family */
+        color: #ffffff; /* Text color */
+        flex: 1; /* Flex grow */
+        min-width: 0; /* Prevent overflow */
+    }
+
+    /* Side card paragraph styles */
+    .side-card.card p {
+        font-weight: 100; /* Thin font */
+        font-style: italic; /* Italic text */
+        font-size: 1.2rem; /* Adjust size as necessary */
+        line-height: 1.6; /* Improve line height */
+        color: #ffffff; /* Ensure contrast with background */
+        margin: 0; /* Remove margin */
+        white-space: normal; /* Wrap text */
+        word-spacing: normal; /* Normal spacing */
+        letter-spacing: 0; /* Normal letter spacing */
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+        .card-container {
+            flex-direction: column; /* Stack cards vertically on small screens */
+            width: 100%; /* Full width */
+        }
+
+        .side-card.card {
+            width: 100%; /* Full width for side cards */
+            margin-bottom: 20px; /* Space below each card */
+        }
+    }
+</style>
+
+<!-- Add the content container -->
+<div class="content-container">
+    <div class="hero-section">
+        <h1 class="hero-title">
+            SUPPORTING, GROWING & EMPOWERING<br /> LOCAL BUSINESSES IN PRETORIA
+        </h1>
+        <a href="#" class="learn-more-button">Learn More</a>
+    </div>
+
+    <div class="info-card card">
+        <p>
+            THE PRETORIA LOCAL IS A DYNAMIC BUSINESS DEDICATED TO UPLIFTING AND EMPOWERING THE LOCAL ECONOMY OF
+            PRETORIA. WE ARE COMMITTED TO SUPPORTING AND GROWING LOCAL BUSINESSES BY FOSTERING A COMMUNITY-DRIVEN MARKETPLACE
+            WHERE SHOPPERS ARE ENCOURAGED TO SPEND THEIR MONEY LOCALLY. OUR MISSION IS TO STIMULATE ECONOMIC GROWTH AND CREATE
+            A THRIVING BUSINESS ENVIRONMENT BY CONNECTING RESIDENTS WITH THE UNIQUE PRODUCTS AND SERVICES OFFERED BY LOCAL
+            ENTREPRENEURS. THROUGH STRATEGIC PARTNERSHIPS, MARKETING INITIATIVES, AND COMMUNITY EVENTS, THE PRETORIA LOCAL IS
+            YOUR TRUSTED PARTNER IN BUILDING A PROSPEROUS AND SUSTAINABLE FUTURE FOR OUR LOCAL BUSINESS COMMUNITY.
+        </p>
+        <p>JOIN US IN MAKING PRETORIA A HUB OF LOCAL EXCELLENCE!</p>
+    </div>
+
+    <div class="first-card card">
+        <h2>About</h2>
+        <p>
+            THE PRETORIA LOCAL IS A COMMUNITY-FOCUSED &nbsp;&nbsp; BUSINESS &nbsp;&nbsp; THAT &nbsp; &nbsp; AIMS &nbsp;&nbsp;TO STIMULATE&nbsp;&nbsp; THE&nbsp;&nbsp; LOCAL&nbsp;&nbsp; ECONOMY&nbsp;&nbsp; BY CONNECTING BUSINESSES WITH LOCAL CONSUMERS.&nbsp;&nbsp; THROUGH&nbsp;&nbsp; A &nbsp;&nbsp;USER-FRIENDLY&nbsp;&nbsp; WEBSITE,&nbsp;&nbsp; WE&nbsp;&nbsp; OFFER&nbsp;&nbsp; AN &nbsp;&nbsp;EXCLUSIVE&nbsp;&nbsp; BUSINESS &nbsp;&nbsp;DIRECTORY WHERE LOCAL ENTREPRENEURS CAN &nbsp;&nbsp;LIST&nbsp;&nbsp; THEIR &nbsp;&nbsp;SERVICES AND PRODUCTS. WE ALSO PROVIDE SOCIAL&nbsp;&nbsp; MEDIA&nbsp;&nbsp; PROMOTION&nbsp;&nbsp; SERVICES TO INCREASE VISIBILITY FOR THESE BUSINESSES, CREATING&nbsp;&nbsp; A &nbsp;&nbsp;STRONG&nbsp;&nbsp; ONLINE PRESENCE AND FOSTERING COMMUNITY ENGAGEMENT.
         </p>
     </div>
-    <div class="side-card card">
-        <h2>OUR MISSION</h2>
-        <p>OUR MISSION IS TO SUPPORT AND
-            EMPOWER&nbsp;&nbsp; LOCAL&nbsp;&nbsp; BUSINESSES&nbsp;&nbsp; IN
-            PRETORIA BY PROVIDING A DYNAMIC
-            ONLINE&nbsp;&nbsp; DIRECTORY&nbsp;&nbsp; AND&nbsp;&nbsp; LEVERAGING
-            SOCIAL MEDIA TO PROMOTE THEIR
-            PRODUCTS&nbsp;&nbsp; AND&nbsp;&nbsp; SERVICES.&nbsp;&nbsp; WE&nbsp;&nbsp; AIM&nbsp;&nbsp; TO
-            CONNECT BUSINESSES WITH THE LOCAL
-            COMMUNITY,&nbsp;&nbsp; DRIVING&nbsp;&nbsp; ECONOMIC
-            GROWTH AND FOSTERING A STRONG
-            SENSE &nbsp;&nbsp;OF&nbsp;&nbsp; COMMUNITY &nbsp;&nbsp;PRIDE &nbsp;&nbsp;IN
-            SHOPPING AND SUPPORTING LOCAL.
-            THROUGH&nbsp;&nbsp; OUR&nbsp;&nbsp; EFFORTS,&nbsp;&nbsp; WE&nbsp;&nbsp; STRIVE&nbsp;&nbsp; TO
-            CREATE A SUSTAINABLE AND
-            PROSPEROUS&nbsp;&nbsp; ENVIRONMENT&nbsp;&nbsp; WHERE
-            EVERY LOCAL BUSINESS HAS THE
-            OPPORTUNITY&nbsp;&nbsp; TO&nbsp;&nbsp; FLOURISH.
-        </p>
+
+    <div class="card-container">
+        <div class="side-card card">
+            <h2>OUR VISION</h2>
+            <p>TO BECOME THE LEADING PLATFORM
+                THAT &nbsp;&nbsp;FOSTERS&nbsp;&nbsp; A &nbsp;&nbsp;THRIVING&nbsp;&nbsp; AND
+                INTERCONNECTED LOCAL ECONOMY IN
+                PRETORIA,&nbsp;&nbsp; WHERE&nbsp;&nbsp; EVERY&nbsp;&nbsp; BUSINESS,
+                FROM SMALL STARTUPS TO
+                ESTABLISHED &nbsp;&nbsp;ENTERPRISES,&nbsp;&nbsp; CAN GROW,
+                SUCCEED,&nbsp;&nbsp; AND&nbsp;&nbsp; CONTRIBUTE &nbsp;&nbsp;TO&nbsp;&nbsp; A
+                VIBRANT COMMUNITY.
+            </p>
+        </div>
+        <div class="side-card card">
+            <h2>OUR MISSION</h2>
+            <p>OUR MISSION IS TO SUPPORT AND
+                EMPOWER&nbsp;&nbsp; LOCAL&nbsp;&nbsp; BUSINESSES&nbsp;&nbsp; IN
+                PRETORIA BY PROVIDING A DYNAMIC
+                ONLINE&nbsp;&nbsp; DIRECTORY&nbsp;&nbsp; AND&nbsp;&nbsp; LEVERAGING
+                SOCIAL MEDIA TO PROMOTE THEIR
+                PRODUCTS&nbsp;&nbsp; AND&nbsp;&nbsp; SERVICES.&nbsp;&nbsp; WE&nbsp;&nbsp; AIM&nbsp;&nbsp; TO
+                CONNECT BUSINESSES WITH THE LOCAL
+                COMMUNITY,&nbsp;&nbsp; DRIVING&nbsp;&nbsp; ECONOMIC
+                GROWTH AND FOSTERING A STRONG
+                SENSE &nbsp;&nbsp;OF&nbsp;&nbsp; COMMUNITY &nbsp;&nbsp;PRIDE &nbsp;&nbsp;IN
+                SHOPPING AND SUPPORTING LOCAL.
+                THROUGH&nbsp;&nbsp; OUR&nbsp;&nbsp; EFFORTS,&nbsp;&nbsp; WE&nbsp;&nbsp; STRIVE&nbsp;&nbsp; TO
+                CREATE A SUSTAINABLE AND
+                PROSPEROUS&nbsp;&nbsp; ENVIRONMENT&nbsp;&nbsp; WHERE
+                EVERY LOCAL BUSINESS HAS THE
+                OPPORTUNITY&nbsp;&nbsp; TO&nbsp;&nbsp; FLOURISH.
+            </p>
+        </div>
     </div>
 </div>
 

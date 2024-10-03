@@ -47,8 +47,14 @@ def become_member(request):
     return render(request, 'directory/become_a_member.html')
 
 def blog(request):
-    blog_posts = BlogPost.objects.all()
+    # First filter for promotions and then append the non-promotion posts
+    blog_posts = list(BlogPost.objects.filter(isOnPromotion=True)) + list(BlogPost.objects.filter(isOnPromotion=False))
     return render(request, 'directory/blog.html', {'blog_posts': blog_posts})
+
+def blog_detail(request, pk):
+    # Retrieve the blog post by its primary key (pk)
+    post = get_object_or_404(BlogPost, pk=pk)
+    return render(request, 'directory/blog_detail.html', {'post': post})
 
 def contact_us(request):
     return render(request, 'directory/contact_us.html')

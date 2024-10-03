@@ -1,12 +1,105 @@
 {% extends 'directory/base.html' %}
-
-{% block title %}Blog | The Pretoria Local{% endblock %}
-
 {% block content %}
-<h1>Blog Posts</h1>
-<ul>
+<style>
+/* Container for blog posts */
+.blog-posts-container {
+    margin-top: 1%;
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Space between cards */
+    padding: 1.5rem; /* Padding around the container */
+}
+
+/* Individual blog card */
+.blog-card {
+    position: relative; /* Position relative for absolute positioning of text */
+    height: 300px; /* Fixed height for equal card sizes */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Add transition for hover effect */
+    color: white; /* White text color for contrast */
+    text-align: center; /* Center align text */
+    background-size: cover; /* Cover the entire card */
+    background-position: center; /* Center the background image */
+}
+
+/* Make the entire card clickable */
+.blog-card a {
+    display: block; /* Make anchor fill the card */
+    height: 100%; /* Make sure it takes full height */
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+}
+
+/* Promotion card style */
+/* .blog-card.promotion {
+    border: 2px solid #00ff2f; 
+} */
+
+/* Promotion banner style */
+.promotion-banner {
+    position: absolute; /* Positioning */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: rgba(255, 215, 0, 0.8); /* Semi-transparent gold background */
+    color: black; /* Text color for the banner */
+    font-weight: bold; /* Make text bold */
+    padding: 0.5rem; /* Padding for the banner */
+    text-align: center; /* Center align text */
+    border-radius: 5px; /* Rounded corners for the banner */
+    z-index: 10; /* Ensure it appears on top of other content */
+}
+
+/* Card content overlay */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem; /* Padding for text */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+}
+
+/* Blog card title */
+.blog-card h2 {
+    font-size: 1.5rem; /* Font size for title */
+    margin: 0; /* Remove margin */
+}
+
+/* Blog card publish date */
+.blog-card p {
+    margin: 0; /* Remove margin */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .blog-card {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-card {
+        height: 200px; /* Further adjust height for mobile */
+    }
+}
+
+</style>
+
+<div class="blog-posts-container">
     {% for post in blog_posts %}
-    <li>{{ post.title }} - {{ post.published_at }}</li>
+    <div class="blog-card {% if post.isOnPromotion %}promotion{% endif %}" style="background-image: url('{{ post.image_url }}');">
+        <a href="{% url 'blog_detail' post.id %}">
+            {% if post.isOnPromotion %}
+            <div class="promotion-banner">SAVE</div> 
+            {% endif %}
+            <div class="card-content">
+                <h2>{{ post.title }}</h2>
+                <p>Published on: {{ post.published_at|date:"F j, Y" }}</p>
+            </div>
+        </a>
+    </div>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
