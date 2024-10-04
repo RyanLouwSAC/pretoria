@@ -5,9 +5,12 @@
 {% block content %}
 
 <style>
+
+
     /* Base Typography */
     html {
         font-size: 16px; /* Base font size */
+        
     }
     
     body {
@@ -18,6 +21,7 @@
     
     /* Standard Heading Styles */
     h1 {
+        color: #000;
         font-size: 3rem; /* 48px */
         font-weight: 700; /* Bold */
         margin-bottom: 1.2rem; /* Space below the heading */
@@ -71,15 +75,15 @@
         margin-bottom: 40px; /* Space below the section */
     }
     
-    .reasons-section h1 {
-        color: #F1EFE7; /* Title color */
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
-    }
+    /* .reasons-section h1 {
+        color: #F1EFE7; 
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+    } */
     
     /* Card Container */
     .reasons-card-container {
         display: grid; /* Grid layout for cards */
-        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
         gap: 30px; /* Increased gap between cards */
         max-width: 1200px; /* Max width for the container */
         margin: 0 auto; /* Center container */
@@ -140,10 +144,10 @@
         margin-bottom: 40px; /* Space below the section */
     }
     
-    .how-to-get-on-board h1 {
-        color: #000; /* Title color */
-        margin-bottom: 20px; /* Space below title */
-    }
+    /* .how-to-get-on-board h1 {
+        color: #000; 
+        margin-bottom: 20px; 
+    } */
     
     .package-container {
         display: flex; /* Flex layout for package cards */
@@ -151,8 +155,8 @@
         flex-wrap: wrap; /* Wrap to next line if necessary */
     }
     
-    .Silver-package-card {
-        background: linear-gradient(135deg, #D7D7D7 0%, #C0C0C0 30%, #FFFFFF 70%, #D7D7D7 100%); /* Silver gradient */
+    /* Package Card Styles */
+    .package-card {
         border-radius: 15px; /* Rounded corners */
         padding: 20px; /* Padding inside package cards */
         color: #000; /* Text color */
@@ -162,27 +166,26 @@
         transition: transform 0.3s; /* Transition effect */
     }
     
-    .Silver-package-card ul {
-        list-style-type: none;
-        padding-left: 0; /* Optional: remove left padding/margin */
+    .Silver-package-card {
+    background: linear-gradient(135deg, #D7D7D7 0%, #C0C0C0 30%, #FFFFFF 70%, #D7D7D7 100%); /* Silver gradient */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Optional: Add padding for better spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
     }
-    
+
     .Gold-package-card {
         background: linear-gradient(135deg, #F2D900 0%, #FFD700 40%, #FFFFFF 60%, #F2D900 100%); /* Gold gradient */
         border-radius: 15px; /* Rounded corners */
-        padding: 20px; /* Padding inside package cards */
-        color: #000; /* Text color */
-        width: 400px; /* Width for package cards */
-        margin: 10px; /* Margin for spacing */
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        transition: transform 0.3s; /* Transition effect */
+        padding: 20px; /* Optional: Add padding for better spacing */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
     }
+
     
-    .Gold-package-card:hover, .Silver-package-card:hover {
+    .package-card:hover {
         transform: translateY(-5px); /* Lift effect on hover */
     }
     
-    .Gold-package-card h4, .Silver-package-card h4 {
+    .package-card h4 {
         margin-bottom: 10px; /* Space below title */
     }
     
@@ -192,76 +195,103 @@
         margin-top: 40px; /* Space above section */
     }
     
-    .additional-branding h1 {
-        color: #000; /* Title color */
-        margin-bottom: 20px; /* Space below title */
+    /* .additional-branding h1 {
+        color: #000; 
+        margin-bottom: 20px; 
+    } */
+    
+    .branding-card {
+        background-color: #0d150a; /* Dark background for branding card */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px; /* Padding inside cards */
+        color: #ffffff; /* Text color */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        transition: transform 0.3s, box-shadow 0.3s; /* Transition effect */
+        margin-bottom: 20px; /* Space between branding cards */
+    }
+
+    .branding-card:hover {
+        transform: translateY(-5px); /* Slight lift effect on hover */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
     }
     
+    .branding-kit {
+        background-color: #0d150a; /* Dark background for branding card */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px; /* Padding inside cards */
+        color: #ffffff; /* Text color */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        transition: transform 0.3s, box-shadow 0.3s; /* Transition effect */
+        margin-bottom: 20px; /* Space between branding cards */
+
+    }
+
     .branding-kit-container {
-        display: flex; /* Flex layout for branding items */
-        justify-content: center; /* Center items */
-        flex-wrap: wrap; /* Wrap items if necessary */
-        gap: 20px; /* Space between items */
+        display: flex; /* Flexbox for horizontal alignment */
+        justify-content: space-around; /* Space between items */
+        margin-top: 10px; /* Space above the container */
+        margin-bottom: 10px;
     }
     
     .branding-item {
-        color: #000000; /* Text color */
-        padding: 15px; /* Padding inside items */
-        border-radius: 10px; /* Rounded corners */
-        width: 200px; /* Fixed width for items */
-        text-align: center; /* Center text */
+        background-color: #0d150a; /* Light background for items */
+        color: #ffffff; /* Dark text for contrast */
+        padding: 10px; /* Padding inside items */
+        border-radius: 10px; /* Rounded corners for items */
+        flex: 1; /* Make items grow equally */
+        text-align: center; /* Center the text */
+        margin: 0 5px; /* Space between items */
+       
     }
     </style>
 <div class="get-on-board-section">
   
-   
     <div class="reasons-section">
         <h1>Why Join Us?</h1>
         <div class="reasons-card-container">
             <div class="card">
-                <h3>Enhanced Visibility</h3>
+                <h3><i class="fas fa-eye"></i> Enhanced Visibility</h3>
                 <p>Gain increased exposure through our comprehensive business directory and vibrant social media channels, which helps your business reach a wider audience in the Pretoria East region.</p>
             </div>
             <div class="card">
-                <h3>Community Connection</h3>
+                <h3><i class="fas fa-users"></i> Community Connection</h3>
                 <p>Become part of a supportive network that champions local businesses, fostering connections with other entrepreneurs and potential customers within the community.</p>
             </div>
             <div class="card">
-                <h3>Credibility and Trust</h3>
+                <h3><i class="fas fa-shield-alt"></i> Credibility and Trust</h3>
                 <p>Aligning with Pretoria East & Co. adds credibility to your business, signaling to customers that you are a recognized and valued part of the local economic landscape.</p>
             </div>
             <div class="card">
-                <h3>Targeted Marketing</h3>
+                <h3><i class="fas fa-bullhorn"></i> Targeted Marketing</h3>
                 <p>Benefit from targeted marketing efforts that highlight your business through our platforms, ensuring that your promotions reach those most interested in local products and services.</p>
             </div>
             <div class="card">
-                <h3>Brand Association</h3>
+                <h3><i class="fas fa-tags"></i> Brand Association</h3>
                 <p>Leverage the Pretoria East & Co. brand to enhance your own branding efforts, including the use of co-branded materials like stickers and promotional items that reinforce your local presence.</p>
             </div>
             <div class="card">
-                <h3>Increased Foot Traffic</h3>
+                <h3><i class="fas fa-store"></i> Increased Foot Traffic</h3>
                 <p>By being part of a well-regarded local network, you can attract more customers to your physical location through enhanced visibility and community engagement.</p>
             </div>
             <div class="card">
-                <h3>Networking Opportunities</h3>
+                <h3><i class="fas fa-network-wired"></i> Networking Opportunities</h3>
                 <p>Access exclusive networking events, workshops, and business development opportunities designed to help you connect with other local businesses and industry professionals.</p>
             </div>
             <div class="card">
-                <h3>Business Growth Support</h3>
+                <h3><i class="fas fa-chart-line"></i> Business Growth Support</h3>
                 <p>Take advantage of resources and tools provided by Pretoria East & Co. to help grow your business, including marketing support, promotional features, and business development advice.</p>
             </div>
             <div class="card">
-                <h3>Community Recognition</h3>
+                <h3><i class="fas fa-award"></i> Community Recognition</h3>
                 <p>Enjoy the benefits of being recognized and celebrated as a key player in the Pretoria East business community, which can boost your business’s reputation and appeal.</p>
             </div>
             <div class="card center-card">
-                <h3>Customized Exposure</h3>
+                <h3><i class="fas fa-cogs"></i> Customized Exposure</h3>
                 <p>Receive personalized marketing strategies and features tailored to highlight the unique aspects of your business, helping you stand out in the local market.</p>
             </div>
         </div>
-        
     </div>
-
+    
     <!-- How to Get On Board -->
     <div class="how-to-get-on-board">
         <h1>How Do I Get On Board?</h1>
@@ -305,29 +335,40 @@
         <p>Locally owned businesses / franchises / private businesses.</p>
     </div>
 
-    <!-- Additional Branding -->
+
+  <!-- Additional Branding -->
+
     <div class="additional-branding">
         <h1>Why Should I Brand My Business with The Pretoria Local Brand?</h1>
-        <p>Branding your business with The Pretoria Local is more than just adding a logo—it's a powerful statement of community and credibility. When you incorporate our branding, you're aligning your business with a trusted local platform known for championing the success of Pretoria local businesses.</p>
-        <p>This association enhances your reputation, fosters customer trust, and can lead to increased foot traffic and sales as customers seek out businesses that are part of this prestigious network. Essentially, our branding serves as a badge of honor that sets your business apart as a key player in the Pretoria local's flourishing economic landscape.</p>
-        
-        <h2>Branding Kit</h2>
-        <p><strong>R500</strong></p>
-        <div class="branding-kit-container">
-            <div class="branding-item">Digital Badge</div>
-            <div class="branding-item">Shopfront Sticker</div>
-            <div class="branding-item">2 x Shopfront Posters</div>
+        <div class="branding-card">
+            <p>Branding your business with The Pretoria Local is more than just adding a logo—it's a powerful statement of community and credibility. When you incorporate our branding, you're aligning your business with a trusted local platform known for championing the success of Pretoria local businesses.</p>
+            <p>This association enhances your reputation, fosters customer trust, and can lead to increased foot traffic and sales as customers seek out businesses that are part of this prestigious network. Essentially, our branding serves as a badge of honor that sets your business apart as a key player in the Pretoria local's flourishing economic landscape.</p>
         </div>
-    
-        <h2>Shopfront Stickers</h2>
-        <p>300 X 300 - R200</p>
-        <p>500 X 500 - R300</p>
-    
-        <h2>Shopfront Posters</h2>
-        <p>A3 - R200</p>
-        <p>A4 - R300</p>
+        <div class="branding-kit">
+            <h2>Branding Kit</h2>
+            <p><strong>R500</strong></p>
+            <div class="branding-kit-container">
+                <div class="branding-item">Digital Badge</div>
+                <div class="branding-item">Shopfront Sticker</div>
+                <div class="branding-item">2 x Shopfront Posters</div>
+            </div>
+        </div>
+        
+        
+
+        <div class="branding-card">
+            <h2>Shopfront Stickers</h2>
+            <p>300 X 300 - R200</p>
+            <p>500 X 500 - R300</p>
+        </div>
+
+        <div class="branding-card">
+            <h2>Shopfront Posters</h2>
+            <p>A3 - R200</p>
+            <p>A4 - R300</p>
+        </div>
     </div>
-    
+
 </div>
 {% endblock %}
 
@@ -336,7 +377,6 @@
 
 
 
-<!--  <div class="reasons-section">
         <h1>Why Join Us?</h1>
         <div class="reasons-card-container">
             <div class="card">
