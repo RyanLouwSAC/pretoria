@@ -5,6 +5,10 @@ from .models import Business, BlogPost,Category
 def home(request):
     return render(request, 'directory/home.html')
 
+
+def about(request):
+    return render(request, 'directory/about.html')
+
 def directory_view(request):
     # Get all categories for the dropdown
     categories = Category.objects.all()

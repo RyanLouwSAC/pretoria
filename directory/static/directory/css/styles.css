@@ -14,7 +14,7 @@ html, body {
     display: flex;
     flex-direction: column;
     padding-top: 60px; /* Add padding at the top to account for the fixed header */
-   
+    overflow-x: hidden;
 }
 
 

@@ -48,49 +48,11 @@
 
     /* Container for overall padding */
     .content-container {
-        padding: 0 40px; /* Adjust this value as needed */
-        max-width: 1200px; /* Limit maximum width for better readability */
-        margin: 0 auto; /* Center the container */
-    }
-
-    /* Hero section styles */
-    .hero-section {
-    width: 100%;
-    height: auto; /* Set a fixed height, or adjust it based on preference */
-    text-align: center;
-    background-color: #ffcc00; /* Background color behind the image */
-    position: relative;
-    overflow: hidden; /* This ensures that the image stays within the bounds of the section */
-    display: flex; /* Flexbox to center the image vertically */
-    justify-content: center;
-    align-items: center; /* Center the content inside the hero */
+    padding: 5% 5% 0; /* 5% top, 10% left and right, 0 bottom */
+    max-width: 1200px; /* Limit maximum width for better readability */
+    margin: 0 auto; /* Center the container */
 }
 
-.hero-image {
-    width: 100%; /* Ensures the image takes the full width */
-    height: auto; /* Ensures the image fills the entire height of the hero section */
-    object-fit: cover; /* Makes the image cover the section without distorting its aspect ratio */
-}
-
-    /* Learn more button */
-    .learn-more-button {
-        margin-top: 30px;
-        display: inline-block;
-        background-color: #0d150a;
-        color: white;
-        padding: 15px 30px;
-        font-size: 1.4rem;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.2s;
-    }
-
-    /* Hover effect for the button */
-    .learn-more-button:hover {
-        background-color: #32cd32; /* Softer green on hover */
-        transform: scale(1.05);
-    }
 
     /* Card styles */
     .card {
@@ -168,42 +130,10 @@
         }
     }
 
-    .view-details {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 8px 15px;
-        background-color: #4CAF50;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
 
-    .view-details:hover {
-        background-color: #45a049;
-    }
 </style>
 
-<div class="hero-section">
-    <img src="{% static 'directory/assets/hero.jpeg' %}" alt="Hero Image" class="hero-image" />
-</div>
-
-<!-- Add the content container -->
 <div class="content-container">
-   
-
-    <div class="first-card card">
-        <p>
-            THE PRETORIA LOCAL IS A DYNAMIC BUSINESS DEDICATED TO UPLIFTING AND EMPOWERING THE LOCAL ECONOMY OF
-            PRETORIA. WE ARE COMMITTED TO SUPPORTING AND GROWING LOCAL BUSINESSES BY FOSTERING A COMMUNITY-DRIVEN MARKETPLACE
-            WHERE SHOPPERS ARE ENCOURAGED TO SPEND THEIR MONEY LOCALLY. OUR MISSION IS TO STIMULATE ECONOMIC GROWTH AND CREATE
-            A THRIVING BUSINESS ENVIRONMENT BY CONNECTING RESIDENTS WITH THE UNIQUE PRODUCTS AND SERVICES OFFERED BY LOCAL
-            ENTREPRENEURS. THROUGH STRATEGIC PARTNERSHIPS, MARKETING INITIATIVES, AND COMMUNITY EVENTS, THE PRETORIA LOCAL IS
-            YOUR TRUSTED PARTNER IN BUILDING A PROSPEROUS AND SUSTAINABLE FUTURE FOR OUR LOCAL BUSINESS COMMUNITY.
-        </p>
-        <p>JOIN US IN MAKING PRETORIA A HUB OF LOCAL EXCELLENCE!</p>
-    </div>
-
     <div class="first-card card">
         <h2>ABOUT</h2>
         <p>
@@ -243,5 +173,7 @@
         </div>
     </div>
 </div>
+</div>
+
 
 {% endblock %}

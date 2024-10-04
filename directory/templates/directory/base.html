@@ -19,6 +19,7 @@
             </div>
             <ul>
                 <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">HOME</a></li>
+                <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">ABOUT</a></li>
                 <li><a href="{% url 'directory' %}" class="{% if request.path == '/directory/' %}active{% endif %}">OUR DIRECTORY</a></li>
                 <li><a href="{% url 'become_member' %}" class="{% if request.path == '/membership/' or request.path == '/membership' %}active{% endif %}">GET ON BOARD</a></li>
                 <li><a href="{% url 'blog' %}" class="{% if request.path == '/blog/' %}active{% endif %}">BLOG</a></li>
