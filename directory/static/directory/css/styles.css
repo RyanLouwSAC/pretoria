@@ -18,11 +18,13 @@ html, body {
 }
 
 
+
 /* Ensure the main content grows to fill the available space between header and footer */
 main {
     overflow-x: hidden;
     flex: 1; /* Allows the main content to expand and fill the space between the header and footer */
 }
+
 
 
 /* Header styles */
@@ -90,205 +92,15 @@ header {
 
 
 
-/* Contact Us Page Styles */
-.contact-us-section {
-    background-color: #F1EFE7;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.contact-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 40px;
-    font-family: 'Playfair Display', serif;
-}
-
-/* Card Styles */
-.contact-card {
-    background-color: #0d150a; /* Dark background for card */
-    border-radius: 20px; /* Rounded corners */
-    padding: 30px; /* Padding inside the card */
-    margin: 20px auto; /* Center the card */
-    max-width: 800px; /* Maximum width */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    color: #ffffff; /* Text color */
-}
-
-/* Contact Info Styles */
-.contact-info h2 {
-    font-size: 2.2rem;
-    color: #ffffff; /* Heading color */
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    font-size: 1.6rem;
-    color: #ffffff; /* Text color */
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.contact-info a {
-    color: #4CAF50; /* Link color */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Social Media Links */
-.social-media-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-flex;
-}
-
-.social-media-list li {
-    margin-right: 20px;
-}
-
-.social-media-list a {
-    font-size: 1.6rem;
-    color: #4CAF50; /* Link color */
-    text-decoration: none;
-}
-
-.social-media-list a:hover {
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .contact-title {
-        font-size: 2.5rem; /* Adjust title size for mobile */
-    }
-
-    .contact-card {
-        padding: 20px; /* Adjust card padding for mobile */
-    }
-
-    .contact-info h2 {
-        font-size: 1.8rem;
-    }
-
-    .contact-info p,
-    .social-media-list a {
-        font-size: 1.4rem; /* Adjust font size for mobile */
-    }
-}
-
-
-
-.view-details {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.view-details:hover {
-    background-color: #45a049;
-}
-
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-    .search-filter-form {
-        flex-direction: column;
-    }
-
-    #search-bar {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    #category-select {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
 
 
 
 
-.business-detail-container {
-    display: flex; /* Layout the cards in a row */
-    justify-content: space-between; /* Space the cards apart evenly */
-    flex-wrap: wrap; /* Ensure cards stack on smaller screens */
-    margin: 20px 0; /* Margin above and below the container */
-}
 
-.business-detail-card {
-    flex: 1; /* Allow both cards to take up equal space */
-    margin: 10px; /* Space between the two cards */
-    padding: 20px; /* Add some padding inside the cards */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visuals */
-    max-width: 48%; /* Ensure the cards don't get too wide */
-}
 
-.business-detail-card-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the logo and name */
-    justify-content: center;
-    text-align: center;
-}
 
-.business-logo {
-    width: 80%; /* Adjust the width of the logo inside the card */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 200px; /* Limit the max size of the logo */
-    margin-top: 20px;
-}
-.business-detail-button-container {
-    display: flex; /* Use flexbox to control alignment */
-    justify-content: center; /* Center horizontally */
-    margin-top: 30px; /* Optional: adds space above the button container */
-    margin-bottom: 30px; 
-}
 
-.business-detail-button {
-    margin-top: 30px;
-    display: inline-block; /* Makes it behave like a button */
-    background-color: #0d150ada; /* Button background color */
-    color: white; /* Button text color */
-    padding: 15px 30px; /* Padding inside the button */
-    font-size: 1.4rem; /* Font size for the button text */
-    border-radius: 30px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    margin-top: 20px; /* Space between the button and the text above */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
 
-/* Hover effect for the button */
-.business-detail-button:hover {
-    background-color: #45a049; /* Slightly darker green on hover */
-}
-/* Mobile view: Stack the cards vertically on smaller screens */
-@media (max-width: 768px) {
-    .business-detail-container {
-        flex-direction: column; /* Stack the cards vertically */
-    }
-
-    .business-detail-card {
-        max-width: 100%; /* Cards will take full width */
-        margin: 10px 0; /* Adjust margins for stacked cards */
-    }
-}
 
 
 

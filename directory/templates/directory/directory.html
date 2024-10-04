@@ -6,10 +6,59 @@
 {% block content %}
 <!-- Custom Styles -->
 <style>
+/* Base Typography */
+body {
+    font-family: 'Arial', sans-serif; /* Set the default font */
+    color: #333; /* Standard text color */
+    line-height: 1.6; /* Standard line height for readability */
+}
+
+/* Standard Heading Styles */
+h1, h3 {
+    color: #000; /* Uniform heading color */
+}
+
+h1 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700; /* Bold */
+    margin-bottom: 1.2rem; /* Space below the heading */
+}
+
+h3 {
+    color: #000000;
+    font-size: 2rem; /* 32px */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 0.8rem; /* Space below h3 */
+}
+
+/* Standard Paragraph Styles */
+p {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1.2rem; /* Space below paragraphs */
+    line-height: 1.8; /* Line height for readability */
+    color: #666; /* Softer color for paragraphs */
+}
+
+/* List Styles */
+ul {
+    margin-bottom: 1.2rem; /* Space below the list */
+}
+
+li {
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+
+.Directory {
+    padding: 1% 10%; /* Top: 5%, Left and Right: 20%, Bottom: 0% */
+}
+
+/* Directory Container */
 .Directory_container {
     padding: 16px;
 }
 
+/* Search and Filter Form Styles */
 .search-filter-form {
     display: flex;
     justify-content: space-between;
@@ -74,6 +123,7 @@ button {
 
 /* Wrapper for Category Card */
 .category-card-wrapper {
+   
     display: flex;
     justify-content: center; /* Center each card horizontally */
     align-items: center; /* Center vertically if needed */
@@ -88,7 +138,7 @@ button {
     background-position: center;
     border-radius: 10px;
     text-align: center;
-    color: white;
+    color:  transparent;
     position: relative;
     height: 200px;
     width: 100%;
@@ -99,7 +149,7 @@ button {
 }
 
 .category-card h3 {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(163, 163, 163, 0.5);
     padding: 10px;
     border-radius: 5px;
     margin: 0;
@@ -136,67 +186,67 @@ button {
 }
 
 </style>
+<div class="Directory">
+    <div class="Directory_container">
+        <h1>Business Directory</h1>
 
-<div class="Directory_container">
-    <h1>Business Directory</h1>
-
-    <!-- Search and Filter Form -->
-    <form method="GET" action="{% url 'directory' %}" class="search-filter-form">
-        <div class="input-container">
-            <input type="text" name="q" placeholder="Search by business name" value="{{ search_query }}" id="search-bar">
-            <button type="submit" class="search-button" aria-label="Search">
-                <span class="search-icon">🔍 Search</span> <!-- Use a span for the emoji -->
-            </button>
-        </div>
-        
-        <select name="category" id="category-select">
-            <option value="">All Categories</option>
-            {% for category in categories %}
-            <option value="{{ category.id }}" {% if category.id|stringformat:"d" == selected_category_id|stringformat:"d" %}selected{% endif %}>
-                {{ category.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </form>
-
-    <div>
-        <!-- Categories Grid -->
-        <div id="category-grid" class="category-grid">
-            {% if not search_query %}
+        <!-- Search and Filter Form -->
+        <form method="GET" action="{% url 'directory' %}" class="search-filter-form">
+            <div class="input-container">
+                <input type="text" name="q" placeholder="Search by business name" value="{{ search_query }}" id="search-bar">
+                <button type="submit" class="search-button" aria-label="Search">
+                    <span class="search-icon">🔍 Search</span> <!-- Use a span for the emoji -->
+                </button>
+            </div>
+            
+            <select name="category" id="category-select">
+                <option value="">All Categories</option>
                 {% for category in categories %}
-                <div class="category-card-wrapper">
-                    <a href="{% url 'directory' %}?category={{ category.id }}" class="category-card" style="background-image: url('{{ category.image }}');">
-                        <h3>{{ category.name }}</h3>
-                    </a>
-                </div>
+                <option value="{{ category.id }}" {% if category.id|stringformat:"d" == selected_category_id|stringformat:"d" %}selected{% endif %}>
+                    {{ category.name }}
+                </option>
                 {% endfor %}
-            {% endif %}
-        </div>
+            </select>
+        </form>
 
-        <!-- Business List (only shows if there is a search query or selected category) -->
-        <div id="business-grid" class="business-grid">
-            {% if search_query or selected_category_id %}
-                {% if businesses %}
-                    {% for business in businesses %}
-                    <div class="business-card-wrapper"> <!-- New wrapper div -->
-                        <div class="business-card">
-                            <a href="{% url 'business_detail' business.id %}">
-                                <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" class="business-logo">
-                            </a>
-                            <h3>{{ business.name }}</h3>
-                            <p>{{ business.category.name }}</p>
-                            <a href="{% url 'business_detail' business.id %}">View Details</a>
-                        </div>
-                    </div> <!-- End of new wrapper div -->
+        <div>
+            <!-- Categories Grid -->
+            <div id="category-grid" class="category-grid">
+                {% if not search_query %}
+                    {% for category in categories %}
+                    <div class="category-card-wrapper">
+                        <a href="{% url 'directory' %}?category={{ category.id }}" class="category-card" style="background-image: url('{{ category.image }}');">
+                            <h3>{{ category.name }}</h3>
+                        </a>
+                    </div>
                     {% endfor %}
-                {% else %}
-                    <p>No businesses found matching your criteria.</p>
                 {% endif %}
-            {% endif %}
+            </div>
+
+            <!-- Business List (only shows if there is a search query or selected category) -->
+            <div id="business-grid" class="business-grid">
+                {% if search_query or selected_category_id %}
+                    {% if businesses %}
+                        {% for business in businesses %}
+                        <div class="business-card-wrapper"> <!-- New wrapper div -->
+                            <div class="business-card">
+                                <a href="{% url 'business_detail' business.id %}">
+                                    <img src="{{ business.logo_url }}" alt="{{ business.name }} logo" class="business-logo">
+                                </a>
+                                <h3>{{ business.name }}</h3>
+                                <p>{{ business.category.name }}</p>
+                                <a href="{% url 'business_detail' business.id %}">View Details</a>
+                            </div>
+                        </div> <!-- End of new wrapper div -->
+                        {% endfor %}
+                    {% else %}
+                        <p>No businesses found matching your criteria.</p>
+                    {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
-
 {% endblock %}
 
 <script src="{% static 'directory/js/search.js' %}"></script>

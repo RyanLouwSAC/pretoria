@@ -1,6 +1,61 @@
 {% extends 'directory/base.html' %}
 {% block content %}
 <style>
+/* Base Typography */
+body {
+    font-family: 'Arial', sans-serif; /* Set the default font */
+    color: #333; /* Standard text color */
+    line-height: 1.6; /* Standard line height for readability */
+}
+
+/* Standard Heading Styles */
+h1, h2, h3, h4 {
+    color: #000; /* Uniform heading color */
+}
+
+h1 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700; /* Bold */
+    margin-bottom: 1.2rem; /* Space below the heading */
+}
+
+h2 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 2rem; /* 32px */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 0.8rem;
+}
+
+h4 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600; /* Semi-bold */
+    margin-bottom: 0.6rem;
+}
+
+/* Standard Paragraph Styles */
+p {
+    font-size: 1rem; /* 16px */
+    margin-bottom: 1.2rem; /* Space below paragraphs */
+    line-height: 1.8; /* Line height for readability */
+    color: #666; /* Softer color for paragraphs */
+}
+
+/* List Styles */
+ul, ol {
+    font-size: 1rem; /* Matches paragraph text */
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
 /* Container for blog posts */
 .blog-posts-container {
     margin-top: 1%;

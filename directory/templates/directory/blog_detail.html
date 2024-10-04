@@ -4,58 +4,113 @@
 {% block title %}{{ post.title }} | The Pretoria Local{% endblock %}
 
 {% block content %}
+
 <!-- Custom Styles -->
 <style>
-.blog-detail-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+    /* Base Typography */
+    body {
+        font-family: 'Arial', sans-serif; /* Set the default font */
+        color: #333; /* Standard text color */
+        line-height: 1.6; /* Standard line height for readability */
+    }
 
-.blog-detail h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
-}
+    /* Standard Heading Styles */
+    h1 {
+        font-size: 3rem; /* 48px */
+        font-weight: 700; /* Bold */
+        margin-bottom: 1.2rem; /* Space below the heading */
+        color: #000; /* Uniform heading color */
+    }
 
-.blog-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    h2 {
+        font-size: 2.5rem; /* 40px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 1rem;
+        color: #000; /* Uniform heading color */
+    }
 
-.blog-meta {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 20px;
-}
+    h3 {
+        font-size: 2rem; /* 32px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 0.8rem;
+        color: #000; /* Uniform heading color */
+    }
 
-.blog-content {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #333;
-}
+    h4 {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 0.6rem;
+        color: #000; /* Uniform heading color */
+    }
 
-.back-to-blog {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 10px 15px;
-    background-color: #0a3d19;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
+    /* Standard Paragraph Styles */
+    p {
+        font-size: 1rem; /* 16px */
+        margin-bottom: 1.2rem; /* Space below paragraphs */
+        line-height: 1.8; /* Line height for readability */
+        color: #666; /* Softer color for paragraphs */
+    }
 
-.back-to-blog:hover {
-    background-color: #075b10;
-}
+    /* List Styles */
+    ul, ol {
+        font-size: 1rem; /* Matches paragraph text */
+        line-height: 1.8;
+        margin-bottom: 1.2rem;
+    }
 
+    li {
+        margin-bottom: 0.5rem; /* Space between list items */
+    }
+
+    /* Blog Detail Container */
+    .blog-detail-container {
+        margin-top: 10px;
+        max-width: 800px; /* Max width for blog detail */
+        margin: 0 auto; /* Center the container */
+        padding: 40px; /* Padding inside the container */
+        background-color: #f9f9f9; /* Light background color */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    /* Blog Image Styles */
+    .blog-image {
+        width: 100%; /* Full width for images */
+        height: auto; /* Auto height for images */
+        border-radius: 10px; /* Rounded corners for images */
+        margin-bottom: 20px; /* Space below images */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for images */
+    }
+
+    /* Meta Information Styles */
+    .blog-meta {
+        font-size: 0.9rem; /* 14px */
+        color: #666; /* Softer color for meta information */
+        margin-bottom: 20px; /* Space below meta info */
+    }
+
+    /* Blog Content Styles */
+    .blog-content {
+        font-size: 1.2rem; /* 19px */
+        line-height: 1.6; /* Increased line height for readability */
+        color: #333; /* Standard color for text */
+    }
+
+    /* Back to Blog Button Styles */
+    .back-to-blog {
+        display: inline-block; /* Inline-block for button */
+        margin-top: 30px; /* Space above button */
+        padding: 10px 15px; /* Padding inside button */
+        background-color: #0a3d19; /* Dark green background */
+        color: #fff; /* White text color */
+        border-radius: 5px; /* Rounded corners */
+        text-decoration: none; /* Remove underline */
+        transition: background-color 0.3s ease; /* Transition for hover effect */
+    }
+
+    .back-to-blog:hover {
+        background-color: #075b10; /* Darker green on hover */
+    }
 </style>
 
 <div class="blog-detail-container">

@@ -3,6 +3,107 @@
 {% block title %}Contact Us | The Pretoria Local{% endblock %}
 
 {% block content %}
+<style>
+/* Base Typography */
+body {
+    font-family: 'Arial', sans-serif; /* Set the default font */
+    color: #333; /* Standard text color */
+    line-height: 1.6; /* Standard line height for readability */
+}
+
+/* Contact Us Page Styles */
+.contact-us-section {
+    background-color: #F1EFE7; /* Light background for contact section */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 3rem; /* Standard heading size */
+    font-weight: 700; /* Bold font weight */
+    color: #000000; /* Heading color */
+    margin-bottom: 40px; /* Space below the title */
+}
+
+/* Card Styles */
+.contact-card {
+    background-color: #0d150a; /* Dark background for card */
+    border-radius: 20px; /* Rounded corners */
+    padding: 30px; /* Padding inside the card */
+    margin: 20px auto; /* Center the card */
+    max-width: 800px; /* Maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: #ffffff; /* Text color */
+}
+
+/* Contact Info Styles */
+.contact-info h2 {
+    font-size: 2rem; /* Heading size for contact info */
+    color: #ffffff; /* Heading color */
+    font-weight: 600; /* Semi-bold font weight */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+.contact-info p {
+    font-size: 1rem; /* Paragraph font size */
+    color: #ffffff; /* Text color */
+    line-height: 1.6; /* Line height for readability */
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+.contact-info a {
+    color: #4CAF50; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Social Media Links */
+.social-media-list {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: inline-flex; /* Horizontal layout for social links */
+}
+
+.social-media-list li {
+    margin-right: 20px; /* Space between social media links */
+}
+
+.social-media-list a {
+    font-size: 1rem; /* Font size for social media links */
+    color: #4CAF50; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-media-list a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .contact-title {
+        font-size: 2.5rem; /* Adjust title size for mobile */
+    }
+
+    .contact-card {
+        padding: 20px; /* Adjust card padding for mobile */
+    }
+
+    .contact-info h2 {
+        font-size: 1.8rem; /* Adjust h2 font size for mobile */
+    }
+
+    .contact-info p,
+    .social-media-list a {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+}
+</style>
+
 <div class="contact-us-section">
     <h1 class="contact-title">Contact Us</h1>
     

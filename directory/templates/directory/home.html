@@ -5,15 +5,44 @@
 {% block content %}
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
-    
+
     /* General Typography */
     body {
         font-family: 'Montserrat', sans-serif; /* Use Montserrat for body text */
         color: #333; /* Darker text for better readability */
+        line-height: 1.6; /* Standard line height for readability */
     }
 
-    h1, h2 {
-        font-family: 'Playfair Display', serif; /* Playfair Display for headers */
+    /* Standard Heading Styles */
+    h1, h2, h3 {
+        color: #000; /* Uniform heading color */
+        /* font-family: 'Playfair Display', serif; Playfair Display for headers */
+    }
+
+    h1 {
+        font-size: 3rem; /* 48px */
+        font-weight: 700; /* Bold */
+        margin-bottom: 1.2rem; /* Space below the heading */
+    }
+
+    h2 {
+        font-size: 2.5rem; /* Example size for h2 */
+        font-weight: 700; /* Bold */
+        margin-bottom: 10px; /* Space below h2 */
+    }
+
+    h3 {
+        font-size: 2rem; /* 32px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 0.8rem; /* Space below h3 */
+    }
+
+    /* Standard Paragraph Styles */
+    p {
+        font-size: 1rem; /* 16px */
+        margin-bottom: 1.2rem; /* Space below paragraphs */
+        line-height: 1.8; /* Line height for readability */
+        color: #666; /* Softer color for paragraphs */
     }
 
     /* Container for overall padding */
@@ -32,7 +61,7 @@
         color: #2c2c2c; /* Darker color for text contrast */
         position: relative;
         overflow: hidden;
-        background-image: url('your-background-image-url.jpg'); /* Add a subtle background image */
+        /* background-image: url('your-background-image-url.jpg'); Add a subtle background image */
         background-size: cover;
         background-position: center;
     }
@@ -65,41 +94,31 @@
         transform: scale(1.05);
     }
 
-    /* Info card styles */
-    .info-card.card {
+    /* Card styles */
+    .card {
         text-align: center;
-        background-color: #0d150a;
         border-radius: 20px;
         padding: 30px;
         margin: 20px auto;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        font-family: 'Montserrat', sans-serif; /* Body font for readability */
-        color: #ffffff;
-        font-size: 1.2rem;
+        /* font-family: 'Montserrat', sans-serif; /* Body font for readability */
+        color: #ffffff; 
         line-height: 1.6;
         max-width: 700px; /* Limit width for better readability */
     }
 
+    /* Info card styles */
+    .info-card.card {
+        background-color: #0d150a;
+    }
+
     /* First card styles */
     .first-card.card {
-        text-align: center;
         background-color: #0d150a;
-        border-radius: 20px;
-        padding: 30px;
-        margin: 20px auto;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        font-family: 'Montserrat', sans-serif; /* Body font for readability */
-        color: #ffffff;
-        font-size: 1.2rem;
-        line-height: 1.6;
-        max-width: 700px;
     }
 
     /* First card title */
     .first-card.card h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 10px;
         color: #ffffff;
     }
 
@@ -107,7 +126,6 @@
     .first-card.card p {
         font-weight: 400;
         font-size: 1.4rem;
-        line-height: 1.6;
         color: #ffffff;
     }
 
@@ -125,27 +143,17 @@
     .side-card.card {
         text-align: center;
         background-color: #f1f1f1; /* Lighter background for contrast */
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        font-family: 'Montserrat', sans-serif; /* Body font for readability */
         color: #333333; /* Darker text */
         flex: 1;
     }
 
     /* Side card title */
     .side-card.card h2 {
-        font-family: 'Playfair Display', serif; /* Serif for headers */
-        font-size: 2rem;
         color: #0d150a;
-        margin-bottom: 15px;
     }
 
     /* Side card paragraph */
     .side-card.card p {
-        font-weight: 400;
-        font-size: 1.2rem;
-        line-height: 1.6;
         color: #333333;
     }
 
@@ -161,6 +169,21 @@
             margin-bottom: 20px;
         }
     }
+
+    .view-details {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 15px;
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .view-details:hover {
+        background-color: #45a049;
+    }
 </style>
 
 <!-- Add the content container -->
@@ -172,7 +195,7 @@
         <a href="#" class="learn-more-button">Learn More</a>
     </div>
 
-    <div class="info-card card">
+    <div class="first-card card">
         <p>
             THE PRETORIA LOCAL IS A DYNAMIC BUSINESS DEDICATED TO UPLIFTING AND EMPOWERING THE LOCAL ECONOMY OF
             PRETORIA. WE ARE COMMITTED TO SUPPORTING AND GROWING LOCAL BUSINESSES BY FOSTERING A COMMUNITY-DRIVEN MARKETPLACE
@@ -185,30 +208,41 @@
     </div>
 
     <div class="first-card card">
-        <h2>About</h2>
+        <h2>ABOUT</h2>
         <p>
-            THE PRETORIA LOCAL IS A COMMUNITY-FOCUSED BUSINESS THAT AIMS TO STIMULATE THE LOCAL ECONOMY BY CONNECTING
-            BUSINESSES WITH LOCAL CONSUMERS. THROUGH A USER-FRIENDLY WEBSITE, WE OFFER AN EXCLUSIVE BUSINESS DIRECTORY WHERE
-            LOCAL ENTREPRENEURS CAN LIST THEIR SERVICES AND PRODUCTS. WE ALSO PROVIDE SOCIAL MEDIA PROMOTION SERVICES TO
-            INCREASE VISIBILITY FOR THESE BUSINESSES, CREATING A STRONG ONLINE PRESENCE AND FOSTERING COMMUNITY ENGAGEMENT.
+            The Pretoria Local is a community-focused business 
+            that aims to stimulate the local economy by connecting 
+            businesses with local consumers. Through a user-friendly 
+            website, we offer an exclusive business directory where 
+            local entrepreneurs can list their services and products. 
+            We also provide social media promotion services to 
+            increase visibility for these businesses, creating a 
+            strong online presence and fostering community engagement.
         </p>
     </div>
 
     <div class="card-container">
         <div class="side-card card">
             <h2>OUR VISION</h2>
-            <p>TO BECOME THE LEADING PLATFORM THAT FOSTERS A THRIVING AND INTERCONNECTED LOCAL ECONOMY IN
-                PRETORIA, WHERE EVERY BUSINESS, FROM SMALL STARTUPS TO ESTABLISHED ENTERPRISES, CAN GROW, SUCCEED,
-                AND CONTRIBUTE TO A VIBRANT COMMUNITY.</p>
+            <p>  To become the leading platform that fosters a thriving
+                 and interconnected local economy in Pretoria, where
+                 every business, from small startups to established
+                 enterprises, can grow, succeed, and contribute to
+                 a vibrant community.</p>
         </div>
         <div class="side-card card">
             <h2>OUR MISSION</h2>
-            <p>OUR MISSION IS TO SUPPORT AND EMPOWER LOCAL BUSINESSES IN PRETORIA BY PROVIDING A DYNAMIC
-                ONLINE DIRECTORY AND LEVERAGING SOCIAL MEDIA TO PROMOTE THEIR PRODUCTS AND SERVICES. WE AIM TO
-                CONNECT BUSINESSES WITH THE LOCAL COMMUNITY, DRIVING ECONOMIC GROWTH AND FOSTERING A STRONG
-                SENSE OF COMMUNITY PRIDE IN SHOPPING AND SUPPORTING LOCAL. THROUGH OUR EFFORTS, WE STRIVE TO
-                CREATE A SUSTAINABLE AND PROSPEROUS ENVIRONMENT WHERE EVERY LOCAL BUSINESS HAS THE OPPORTUNITY
-                TO FLOURISH.</p>
+            <p>
+                Our mission is to support and empower local businesses
+                in Pretoria by providing a dynamic online directory and 
+                leveraging social media to promote their products and 
+                services. We aim to connect businesses with the local 
+                community, driving economic growth and fostering a 
+                strong sense of community pride in shopping and 
+                supporting local. Through our efforts, we strive to 
+                create a sustainable and prosperous environment where 
+                every local business has the opportunity to flourish.
+            </p>
         </div>
     </div>
 </div>

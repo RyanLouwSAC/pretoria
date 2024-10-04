@@ -56,5 +56,7 @@ def blog_detail(request, pk):
     post = get_object_or_404(BlogPost, pk=pk)
     return render(request, 'directory/blog_detail.html', {'post': post})
 
+
+
 def contact_us(request):
     return render(request, 'directory/contact_us.html')

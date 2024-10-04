@@ -5,99 +5,152 @@
 {% block content %}
 
 <style>
-        /* Section styles */
-        .get-on-board-section {
+    /* Base Typography */
+    html {
+        font-size: 16px; /* Base font size */
+    }
+    
+    body {
+        font-family: Arial, sans-serif; /* Set the default font */
+        color: #333; /* Standard text color */
+        line-height: 1.6; /* Standard line height for readability */
+    }
+    
+    /* Standard Heading Styles */
+    h1 {
+        font-size: 3rem; /* 48px */
+        font-weight: 700; /* Bold */
+        margin-bottom: 1.2rem; /* Space below the heading */
+    }
+    
+    h2 {
+        font-size: 2.5rem; /* 40px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 1rem;
+    }
+    
+    h3 {
+        font-size: 2rem; /* 32px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 0.8rem;
+    }
+    
+    h4 {
+        font-size: 1.5rem; /* 24px */
+        font-weight: 600; /* Semi-bold */
+        margin-bottom: 0.6rem;
+    }
+    
+    /* Standard Paragraph Styles */
+    p {
+        font-size: 1rem; /* 16px */
+        margin-bottom: 1.2rem; /* Space below paragraphs */
+        line-height: 1.8; /* Line height for readability */
+        color: #666; /* Softer color for paragraphs */
+    }
+    
+    /* List Styles */
+    ul, ol {
+        font-size: 1rem; /* Matches paragraph text */
+        line-height: 1.8;
+        margin-bottom: 1.2rem;
+    }
+    
+    li {
+        margin-bottom: 0.5rem; /* Space between list items */
+    }
+    
+    /* Section styles */
+    .get-on-board-section {
         padding: 40px 20px; /* Padding for the section */
     }
-
-  /* Reasons Section Styles */
-.reasons-section {
-    text-align: center; /* Center text */
-    margin-bottom: 40px; /* Space below the section */
-}
-
-.reasons-section h1 {
-    font-size: 3rem; /* Title size */
-    color: #fff; /* Title color */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
-    margin-bottom: 20px; /* Space below title */
-}
-
-.reasons-card-container {
-    display: grid; /* Grid layout for cards */
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    gap: 30px; /* Increased gap between cards */
-    max-width: 1200px; /* Max width for the container */
-    margin: 0 auto; /* Center container */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .reasons-card-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    
+    /* Reasons Section Styles */
+    .reasons-section {
+        text-align: center; /* Center text */
+        margin-bottom: 40px; /* Space below the section */
     }
-}
-
-@media (max-width: 768px) {
-    .reasons-card-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    
+    .reasons-section h1 {
+        color: #F1EFE7; /* Title color */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
     }
-}
-
-@media (max-width: 480px) {
+    
+    /* Card Container */
     .reasons-card-container {
-        grid-template-columns: 1fr; /* 1 column for very small screens */
+        display: grid; /* Grid layout for cards */
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+        gap: 30px; /* Increased gap between cards */
+        max-width: 1200px; /* Max width for the container */
+        margin: 0 auto; /* Center container */
     }
-}
-
-/* Card styles */
-.card {
-    background-color: #0d150a; /* Dark background for cards */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px; /* Padding inside cards */
-    color: #ffffff; /* Text color */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transition effect */
-}
-
-.card:nth-child(even) {
-    background-color: #1b2a1c; /* Alternate background color for even cards */
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-}
-
-.card h3 {
-    font-size: 1.8rem; /* Title size in cards */
-    margin-bottom: 10px; /* Space below title */
-    font-weight: 700; /* Make card headings bold */
-}
-
-.card p {
-    font-size: 1.2rem; /* Text size */
-    line-height: 1.6; /* Increase line height for better readability */
-    font-weight: 400; /* Regular weight for paragraph text */
-}
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+        .reasons-card-container {
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .reasons-card-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .reasons-card-container {
+            grid-template-columns: 1fr; /* 1 column for very small screens */
+        }
+    }
+    
+    /* Card styles */
+    .card {
+        background-color: #0d150a; /* Dark background for cards */
+        border-radius: 15px; /* Rounded corners */
+        padding: 20px; /* Padding inside cards */
+        color: #ffffff; /* Text color */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        transition: transform 0.3s, box-shadow 0.3s; /* Transition effect */
+    }
+    
+    .card:nth-child(even) {
+        background-color: #1b2a1c; /* Alternate background color for even cards */
+    }
+    
+    .card:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    }
+    
+    .card h3 {
+        margin-bottom: 10px; /* Space below title */
+        font-weight: 700; /* Make card headings bold */
+    }
+    
+    .card p {
+        font-size: 1.2rem; /* Text size */
+        line-height: 1.6; /* Increase line height for better readability */
+        font-weight: 400; /* Regular weight for paragraph text */
+    }
+    
     /* How to Get On Board Section Styles */
     .how-to-get-on-board {
         text-align: center; /* Center text */
         margin-bottom: 40px; /* Space below the section */
     }
-
+    
     .how-to-get-on-board h1 {
-        font-size: 3rem; /* Title size */
         color: #000; /* Title color */
         margin-bottom: 20px; /* Space below title */
     }
-
+    
     .package-container {
         display: flex; /* Flex layout for package cards */
         justify-content: space-evenly; /* Space between cards */
         flex-wrap: wrap; /* Wrap to next line if necessary */
     }
-
+    
     .Silver-package-card {
         background: linear-gradient(135deg, #D7D7D7 0%, #C0C0C0 30%, #FFFFFF 70%, #D7D7D7 100%); /* Silver gradient */
         border-radius: 15px; /* Rounded corners */
@@ -108,7 +161,12 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
         transition: transform 0.3s; /* Transition effect */
     }
-
+    
+    .Silver-package-card ul {
+        list-style-type: none;
+        padding-left: 0; /* Optional: remove left padding/margin */
+    }
+    
     .Gold-package-card {
         background: linear-gradient(135deg, #F2D900 0%, #FFD700 40%, #FFFFFF 60%, #F2D900 100%); /* Gold gradient */
         border-radius: 15px; /* Rounded corners */
@@ -119,39 +177,33 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
         transition: transform 0.3s; /* Transition effect */
     }
-
+    
     .Gold-package-card:hover, .Silver-package-card:hover {
         transform: translateY(-5px); /* Lift effect on hover */
     }
-
+    
     .Gold-package-card h4, .Silver-package-card h4 {
-        font-size: 2rem; /* Package title size */
         margin-bottom: 10px; /* Space below title */
     }
-
-    .Gold-package-card p, .Silver-package-card p {
-        font-size: 1.2rem; /* Text size */
-    }
-
+    
     /* Additional Branding Section Styles */
     .additional-branding {
         text-align: center; /* Center text */
         margin-top: 40px; /* Space above section */
     }
-
+    
     .additional-branding h1 {
-        font-size: 3rem; /* Title size */
         color: #000; /* Title color */
         margin-bottom: 20px; /* Space below title */
     }
-
+    
     .branding-kit-container {
         display: flex; /* Flex layout for branding items */
         justify-content: center; /* Center items */
         flex-wrap: wrap; /* Wrap items if necessary */
         gap: 20px; /* Space between items */
     }
-
+    
     .branding-item {
         color: #000000; /* Text color */
         padding: 15px; /* Padding inside items */
@@ -159,7 +211,7 @@
         width: 200px; /* Fixed width for items */
         text-align: center; /* Center text */
     }
-</style>
+    </style>
 <div class="get-on-board-section">
   
    
@@ -278,3 +330,55 @@
     
 </div>
 {% endblock %}
+
+
+
+
+
+
+<!--  <div class="reasons-section">
+        <h1>Why Join Us?</h1>
+        <div class="reasons-card-container">
+            <div class="card">
+                <h3>Enhanced Visibility</h3>
+                <p>Gain increased exposure through our comprehensive business directory and vibrant social media channels, which helps your business reach a wider audience in the Pretoria East region.</p>
+            </div>
+            <div class="card">
+                <h3>Community Connection</h3>
+                <p>Become part of a supportive network that champions local businesses, fostering connections with other entrepreneurs and potential customers within the community.</p>
+            </div>
+            <div class="card">
+                <h3>Credibility and Trust</h3>
+                <p>Aligning with Pretoria East & Co. adds credibility to your business, signaling to customers that you are a recognized and valued part of the local economic landscape.</p>
+            </div>
+            <div class="card">
+                <h3>Targeted Marketing</h3>
+                <p>Benefit from targeted marketing efforts that highlight your business through our platforms, ensuring that your promotions reach those most interested in local products and services.</p>
+            </div>
+            <div class="card">
+                <h3>Brand Association</h3>
+                <p>Leverage the Pretoria East & Co. brand to enhance your own branding efforts, including the use of co-branded materials like stickers and promotional items that reinforce your local presence.</p>
+            </div>
+            <div class="card">
+                <h3>Increased Foot Traffic</h3>
+                <p>By being part of a well-regarded local network, you can attract more customers to your physical location through enhanced visibility and community engagement.</p>
+            </div>
+            <div class="card">
+                <h3>Networking Opportunities</h3>
+                <p>Access exclusive networking events, workshops, and business development opportunities designed to help you connect with other local businesses and industry professionals.</p>
+            </div>
+            <div class="card">
+                <h3>Business Growth Support</h3>
+                <p>Take advantage of resources and tools provided by Pretoria East & Co. to help grow your business, including marketing support, promotional features, and business development advice.</p>
+            </div>
+            <div class="card">
+                <h3>Community Recognition</h3>
+                <p>Enjoy the benefits of being recognized and celebrated as a key player in the Pretoria East business community, which can boost your business’s reputation and appeal.</p>
+            </div>
+            <div class="card center-card">
+                <h3>Customized Exposure</h3>
+                <p>Receive personalized marketing strategies and features tailored to highlight the unique aspects of your business, helping you stand out in the local market.</p>
+            </div>
+        </div>
+        
+    </div> -->
