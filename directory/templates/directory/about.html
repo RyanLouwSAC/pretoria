@@ -1,5 +1,4 @@
 {% extends 'directory/base.html' %}
-
 {% block title %}Home | The Pretoria Local{% endblock %}
 {% load static %}
 {% block content %}
@@ -17,7 +16,6 @@
     /* Standard Heading Styles */
     h1, h2, h3 {
         color: #000; /* Uniform heading color */
-        /* font-family: 'Playfair Display', serif; Playfair Display for headers */
     }
 
     h1 {
@@ -48,11 +46,10 @@
 
     /* Container for overall padding */
     .content-container {
-    padding: 5% 5% 0; /* 5% top, 10% left and right, 0 bottom */
-    max-width: 1200px; /* Limit maximum width for better readability */
-    margin: 0 auto; /* Center the container */
-}
-
+        padding: 5% 5% 0; /* 5% top, 5% left and right, 0 bottom */
+        max-width: 1200px; /* Limit maximum width for better readability */
+        margin: 0 auto; /* Center the container */
+    }
 
     /* Card styles */
     .card {
@@ -61,7 +58,6 @@
         padding: 30px;
         margin: 20px auto;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        /* font-family: 'Montserrat', sans-serif; /* Body font for readability */
         color: #ffffff; 
         line-height: 1.6;
         max-width: 1600px; /* Limit width for better readability */
@@ -87,6 +83,50 @@
         font-weight: 400;
         font-size: 1.4rem;
         color: #ffffff;
+    }
+
+    /* Owners Section */
+    .owner-section {
+        margin-top: 20px; /* Add space above the section */
+    }
+
+    .owner-row {
+        display: flex; /* Use flexbox for layout */
+        justify-content: space-between; /* Space between the columns */
+        align-items: center; /* Center items vertically */
+        margin-bottom: 20px; /* Space below each row */
+    }
+
+   .owner-image {
+    max-width: 30%; /* Change this value to make the images smaller */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+    .owner-description {
+        max-width: 55%; /* Limit width for description */
+        font-style: italic; /* Style as quote */
+        color: #444; /* Color for description text */
+        padding: 0 20px; /* Padding around text */
+    }
+
+    /* Responsive behavior */
+    @media (max-width: 768px) {
+        .owner-row {
+            flex-direction: column; /* Stack columns on smaller screens */
+            align-items: center; /* Center content */
+        }
+
+        .owner-image {
+            max-width: 80%; /* Full width for images on small screens */
+            margin-bottom: 10px; /* Space below image */
+        }
+
+        .owner-description {
+            max-width: 80%; /* Full width for description on small screens */
+            text-align: center; /* Center text */
+        }
     }
 
     /* Card container styles */
@@ -130,7 +170,6 @@
         }
     }
 
-
 </style>
 
 <div class="content-container">
@@ -148,15 +187,39 @@
         </p>
     </div>
 
+    <!-- Owners Section -->
+    <div class="owner-section">
+        <div class="owner-row">
+            <div class="owner-description">
+                <blockquote>
+                    Johandri Johnson - Co Owner.
+                </blockquote>
+            </div>
+            <!-- staticfiles/directory/assets/1.jpeg -->
+            <img src="{% static '/directory/assets/1.jpeg' %}" alt="Owner 1" class="owner-image" />
+        </div>
+        
+        <div class="owner-row">
+            <img src="{% static '/directory/assets/2.jpeg' %}" alt="Owner 2" class="owner-image" />
+            <div class="owner-description">
+                <blockquote>
+                    Co Owner & Social media manager.
+                </blockquote>
+            </div>
+           
+        </div>
+    </div>
+
     <div class="card-container">
         <div class="side-card card">
             <h2>OUR VISION</h2>
-            <p>  To become the leading platform that fosters a thriving
-                 and interconnected local economy in Pretoria, where
-                 every business, from small startups to established
-                 enterprises, can grow, succeed, and contribute to
-                 a vibrant community.</p>
+            <p>To become the leading platform that fosters a thriving
+                and interconnected local economy in Pretoria, where
+                every business, from small startups to established
+                enterprises, can grow, succeed, and contribute to
+                a vibrant community.</p>
         </div>
+        
         <div class="side-card card">
             <h2>OUR MISSION</h2>
             <p>
@@ -173,7 +236,5 @@
         </div>
     </div>
 </div>
-</div>
-
 
 {% endblock %}
