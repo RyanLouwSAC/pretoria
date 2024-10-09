@@ -93,9 +93,7 @@ USE_TZ = True
 STATIC_URL = '/static/'  # Ensure there's a leading slash
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Adjust if needed
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "directory/static",  # Adjust this as necessary
-# ]
+
 
 # Media files (optional)
 MEDIA_URL = '/media/'  # URL prefix for media files
